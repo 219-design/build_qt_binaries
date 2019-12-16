@@ -1,0 +1,11 @@
+The following debug binaries were too large and exceeded GitHub's file size limit:
+
+./qt5_dbg_install/lib/libQt5Qml.so.5.14.0
+./qt5_dbg_install/lib/libQt5Gui.so.5.14.0
+./qt5_dbg_install/lib/libQt5Widgets.so.5.14.0
+./qt5_dbg_install/lib/libQt5Quick.so.5.14.0
+./qt5_dbg_install/lib/libQt5XmlPatterns.so.5.14.0
+
+Therefore, we omit the debug binaries in this repo.
+
+Please compile them yourself with the script(s) at the root of this repo.

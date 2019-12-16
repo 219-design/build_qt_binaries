@@ -1,0 +1,12 @@
+prefix=//opt/repositories/qt5_opt_install
+exec_prefix=${prefix}
+libdir=/opt/repositories/qt5_opt_install/lib
+includedir=/opt/repositories/qt5_opt_install/include
+
+
+Name: Qt5 UiPlugin
+Description: Qt UiPlugin module
+Version: 5.14.0
+Cflags: -DQT_UIPLUGIN_LIB -I${includedir}/QtUiPlugin -I${includedir}
+Requires: Qt5Core Qt5Gui Qt5Widgets
+

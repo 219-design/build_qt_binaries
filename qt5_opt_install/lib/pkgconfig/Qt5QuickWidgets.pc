@@ -1,0 +1,13 @@
+prefix=//opt/repositories/qt5_opt_install
+exec_prefix=${prefix}
+libdir=/opt/repositories/qt5_opt_install/lib
+includedir=/opt/repositories/qt5_opt_install/include
+
+
+Name: Qt5 QuickWidgets
+Description: Qt QuickWidgets module
+Version: 5.14.0
+Libs: -L${libdir} -lQt5QuickWidgets 
+Cflags: -DQT_QUICKWIDGETS_LIB -I${includedir}/QtQuickWidgets -I${includedir}
+Requires: Qt5Core Qt5Gui Qt5Qml Qt5Quick Qt5Widgets
+

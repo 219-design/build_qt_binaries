@@ -1,0 +1,13 @@
+prefix=//opt/repositories/qt5_opt_install
+exec_prefix=${prefix}
+libdir=/opt/repositories/qt5_opt_install/lib
+includedir=/opt/repositories/qt5_opt_install/include
+
+
+Name: Qt5 Test
+Description: Qt Unit Testing Library
+Version: 5.14.0
+Libs: -L${libdir} -lQt5Test 
+Cflags: -DQT_TESTLIB_LIB -I${includedir}/QtTest -I${includedir}
+Requires: Qt5Core
+

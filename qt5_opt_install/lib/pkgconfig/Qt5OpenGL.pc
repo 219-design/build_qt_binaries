@@ -1,0 +1,13 @@
+prefix=//opt/repositories/qt5_opt_install
+exec_prefix=${prefix}
+libdir=/opt/repositories/qt5_opt_install/lib
+includedir=/opt/repositories/qt5_opt_install/include
+
+
+Name: Qt5 OpenGL
+Description: Qt OpenGL module
+Version: 5.14.0
+Libs: -L${libdir} -lQt5OpenGL 
+Cflags: -DQT_OPENGL_LIB -I${includedir}/QtOpenGL -I${includedir}
+Requires: Qt5Core Qt5Gui Qt5Widgets
+

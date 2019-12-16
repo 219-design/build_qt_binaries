@@ -1,0 +1,1382 @@
+Command line: -prefix /opt/repositories/fc-build-01/qt5_dbg_configuration/../../qt5_dbg_install -opensource -confirm-license -c++std c++17 -debug -sysroot / -no-pch -pkg-config -qt-libpng -qt-zlib -skip qt3d -skip qtactiveqt -skip qtandroidextras -skip qtcanvas3d -skip qtconnectivity -skip qtdatavis3d -skip qtdoc -skip qtdocgallery -skip qtfeedback -skip qtgamepad -skip qtlocation -skip qtlottie -skip qtmacextras -skip qtnetworkauth -skip qtpim -skip qtpurchasing -skip qtqa -skip qtquick3d -skip qtremoteobjects -skip qtrepotools -skip qtscxml -skip qtsensors -skip qtserialbus -skip qtserialport -skip qtspeech -skip qtsystems -skip qtwayland -skip qtwebchannel -skip qtwebengine -skip qtwebglplugin -skip qtwebsockets -skip qtwebview -skip qtwinextras -no-compile-examples -nomake tools -nomake examples -v
+executing config test machineTuple
++ g++ -dumpmachine
+> x86_64-linux-gnu
+test config.qtbase.tests.machineTuple succeeded
+executing config test verifyspec
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/verifyspec && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/qt5_sources/qtbase/config.tests/verifyspec
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/verifyspec && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ -O2 -w -fPIC  -I/opt/repositories/qt5_sources/qtbase/config.tests/verifyspec -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o verifyspec.o /opt/repositories/qt5_sources/qtbase/config.tests/verifyspec/verifyspec.cpp
+> g++ --sysroot=/ -Wl,-O1 -o verifyspec verifyspec.o      
+test config.qtbase.tests.verifyspec succeeded
+executing config test architecture
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/arch && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/qt5_sources/qtbase/config.tests/arch
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/arch && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ -O2 -w -fPIC  -I/opt/repositories/qt5_sources/qtbase/config.tests/arch -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o arch.o /opt/repositories/qt5_sources/qtbase/config.tests/arch/arch.cpp
+> g++ --sysroot=/ -Wl,-O1 -o arch arch.o      
+Detected architecture: x86_64 (mmx sse sse2)
+test config.qtbase.tests.architecture gave result x86_64
+executing config test host_architecture
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/arch && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" -early "CONFIG += cross_compile" /opt/repositories/qt5_sources/qtbase/config.tests/arch/arch_host.pro
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/arch && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f arch.o
+> rm -f *~ core *.core
+> g++ -c -pipe -O2 -w -fPIC  -I/opt/repositories/qt5_sources/qtbase/config.tests/arch -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o arch.o /opt/repositories/qt5_sources/qtbase/config.tests/arch/arch.cpp
+> g++ -Wl,-O1 -o arch_host arch.o      
+Detected architecture: x86_64 (mmx sse sse2)
+test config.qtbase.tests.host_architecture gave result x86_64
+executing config test sse2
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=sse2 /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ -msse2 -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_SSE2 -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.sse2 succeeded
+executing config test aesni
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=aesni /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -maes -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AESNI -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.aesni succeeded
+executing config test alloca_h
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/alloca_h && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/alloca_h
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/alloca_h && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ -O2 -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o alloca_h main.o      
+test config.qtbase.tests.alloca_h succeeded
+executing config test sse3
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=sse3 /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -msse3 -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_SSE3 -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.sse3 succeeded
+executing config test ssse3
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=ssse3 /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -mssse3 -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_SSSE3 -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.ssse3 succeeded
+executing config test sse4_1
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=sse4_1 /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -msse4.1 -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_SSE4_1 -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.sse4_1 succeeded
+executing config test sse4_2
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=sse4_2 /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -msse4.2 -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_SSE4_2 -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.sse4_2 succeeded
+executing config test avx
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -mavx -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.avx succeeded
+executing config test avx2
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx2 /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -mavx2 -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX2 -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.avx2 succeeded
+executing config test avx512f
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512f /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -mavx512f -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512F -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.avx512f succeeded
+executing config test avx512bw
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512bw /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -mavx512bw -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512BW -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.avx512bw succeeded
+executing config test avx512cd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512cd /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -mavx512cd -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512CD -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.avx512cd succeeded
+executing config test avx512dq
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512dq /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -mavx512dq -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512DQ -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.avx512dq succeeded
+executing config test avx512er
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512er /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -mavx512er -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512ER -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.avx512er succeeded
+executing config test avx512ifma
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512ifma /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -mavx512ifma -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512IFMA -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.avx512ifma succeeded
+executing config test avx512pf
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512pf /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -mavx512pf -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512PF -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.avx512pf succeeded
+executing config test avx512vbmi
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512vbmi /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -mavx512vbmi -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512VBMI -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.avx512vbmi succeeded
+executing config test avx512vl
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512vl /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -mavx512vl -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512VL -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.avx512vl succeeded
+executing config test c++14
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/c++14 && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/c++14
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/c++14 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ -O2 -std=gnu++1y -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o c++14 main.o      
+test config.qtbase.tests.c++14 succeeded
+executing config test c++1z
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/c++1z && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/c++1z
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/c++1z && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ -O2 -std=gnu++1z -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o c++1z main.o      
+test config.qtbase.tests.c++1z succeeded
+executing config test c99
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/c99 && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/c99
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/c99 && MAKEFLAGS= /usr/bin/make
+> gcc -c -pipe --sysroot=/ -O2 -std=gnu99 -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.c
+> g++ --sysroot=/ -Wl,-O1 -o c99 main.o      
+test config.qtbase.tests.c99 succeeded
+executing config test c11
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/c11 && /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/c11
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/c11 && MAKEFLAGS= /usr/bin/make
+> gcc -c -pipe --sysroot=/ -O2 -std=gnu11 -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.c
+> g++ --sysroot=/ -Wl,-O1 -o c11 main.o      
+test config.qtbase.tests.c11 succeeded
+executing config test pkg-config
+Found pkg-config from path: /usr/bin/pkg-config
+test config.qtbase.tests.pkg-config succeeded
+Global lib dirs: [] [/usr/lib/gcc/x86_64-linux-gnu/7 /usr/lib/x86_64-linux-gnu /usr/lib /lib/x86_64-linux-gnu /lib]
+Global inc dirs: [] [/usr/include/c++/7 /usr/include/x86_64-linux-gnu/c++/7 /usr/include/c++/7/backward /usr/lib/gcc/x86_64-linux-gnu/7/include /usr/local/include /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed /usr/include/x86_64-linux-gnu /usr/include]
+looking for library dbus
+Trying source 0 (type pkgConfig) of library dbus ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors dbus-1 '>=' 1.2
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion dbus-1 '>=' 1.2
+> 1.12.2
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L dbus-1 '>=' 1.2
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l dbus-1 '>=' 1.2
+> -ldbus-1
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags dbus-1 '>=' 1.2
+> -I//usr/include/dbus-1.0 -I//usr/lib/x86_64-linux-gnu/dbus-1.0/include
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/dbus && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += dbus' 'QMAKE_LIBS_DBUS = -ldbus-1' 'QMAKE_INCDIR_DBUS = //usr/include/dbus-1.0 //usr/lib/x86_64-linux-gnu/dbus-1.0/include' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/dbus
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/dbus && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ -O2 -w -fPIC  -I. -isystem /usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o dbus main.o   -ldbus-1   
+ => source accepted.
+test config.qtbase.libraries.dbus succeeded
+looking for library libdl
+Trying source 0 (type inline) of library libdl ...
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libdl && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += libdl' 'QMAKE_LIBS_LIBDL = ' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libdl
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libdl && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ -O2 -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o libdl main.o      
+> main.o: In function `main':
+> main.cpp:(.text.startup+0x9): undefined reference to `dlopen'
+> main.cpp:(.text.startup+0x11): undefined reference to `dlclose'
+> main.cpp:(.text.startup+0x1a): undefined reference to `dlsym'
+> main.cpp:(.text.startup+0x1f): undefined reference to `dlerror'
+> collect2: error: ld returned 1 exit status
+> Makefile:67: recipe for target 'libdl' failed
+> make: *** [libdl] Error 1
+ => source failed verification.
+Trying source 1 (type inline) of library libdl ...
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libdl && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += libdl' 'QMAKE_LIBS_LIBDL = -ldl' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libdl
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libdl && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -O2 -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o libdl main.o   -ldl   
+ => source accepted.
+test config.qtbase.libraries.libdl succeeded
+executing config test enable_new_dtags
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests && g++ --sysroot=/ --sysroot=/ -pipe --sysroot=/ --sysroot=/ -Wl,--enable-new-dtags -o conftest-out conftest.cpp
+test config.qtbase.tests.enable_new_dtags succeeded
+executing config test f16c
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=f16c /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -mf16c -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_F16C -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.f16c succeeded
+looking for library host_dbus
+Trying source 0 (type pkgConfig) of library host_dbus ...
++ /usr/bin/pkg-config --exists --silence-errors dbus-1 '>=' 1.2
++ /usr/bin/pkg-config --modversion dbus-1 '>=' 1.2
+> 1.12.2
++ /usr/bin/pkg-config --libs-only-L dbus-1 '>=' 1.2
++ /usr/bin/pkg-config --libs-only-l dbus-1 '>=' 1.2
+> -ldbus-1
++ /usr/bin/pkg-config --cflags dbus-1 '>=' 1.2
+> -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include
+ => source accepted.
+test config.qtbase.libraries.host_dbus succeeded
+looking for library libudev
+Trying source 0 (type pkgConfig) of library libudev ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors libudev
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion libudev
+> 237
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L libudev
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l libudev
+> -ludev
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags libudev
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libudev && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += libudev' 'QMAKE_LIBS_LIBUDEV = -ludev' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libudev
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libudev && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ -O2 -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o libudev main.o   -ludev   
+ => source accepted.
+test config.qtbase.libraries.libudev succeeded
+executing config test optimize_debug
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests && g++ --sysroot=/ --sysroot=/ -pipe --sysroot=/ --sysroot=/ -Og -o conftest-out conftest.cpp
+test config.qtbase.tests.optimize_debug succeeded
+executing config test posix_fallocate
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/posix_fallocate && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/posix_fallocate
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/posix_fallocate && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ -O2 -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o posix_fallocate main.o      
+test config.qtbase.tests.posix_fallocate succeeded
+executing config test rdrnd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=rdrnd /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -mrdrnd -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_RDRND -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.rdrnd succeeded
+executing config test reduce_exports
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/reduce_exports && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/reduce_exports
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/reduce_exports && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ -O2 -fvisibility=hidden -fvisibility-inlines-hidden -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> rm -f libreduce_exports.so.1.0.0 libreduce_exports.so libreduce_exports.so.1 libreduce_exports.so.1.0
+> g++ --sysroot=/ -Wl,-O1 -shared -Wl,-soname,libreduce_exports.so.1 -o libreduce_exports.so.1.0.0 main.o      
+> ln -s libreduce_exports.so.1.0.0 libreduce_exports.so
+> ln -s libreduce_exports.so.1.0.0 libreduce_exports.so.1
+> ln -s libreduce_exports.so.1.0.0 libreduce_exports.so.1.0
+test config.qtbase.tests.reduce_exports succeeded
+executing config test reduce_relocations
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/reduce_relocations && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/reduce_relocations
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/reduce_relocations && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ -O2 -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> rm -f libreduce_relocations.so.1.0.0 libreduce_relocations.so libreduce_relocations.so.1 libreduce_relocations.so.1.0
+> g++ --sysroot=/ -Wl,-O1 -shared -Wl,-Bsymbolic-functions -Wl,-soname,libreduce_relocations.so.1 -o libreduce_relocations.so.1.0.0 main.o      
+> ln -s libreduce_relocations.so.1.0.0 libreduce_relocations.so
+> ln -s libreduce_relocations.so.1.0.0 libreduce_relocations.so.1
+> ln -s libreduce_relocations.so.1.0.0 libreduce_relocations.so.1.0
+test config.qtbase.tests.reduce_relocations succeeded
+executing config test shani
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=shani /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -msha -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_SHANI -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.shani succeeded
+executing config test signaling_nan
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/signaling_nan && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/signaling_nan
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/signaling_nan && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ -O2 -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o signaling_nan main.o      
+test config.qtbase.tests.signaling_nan succeeded
+executing config test stl
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/stl && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/qt5_sources/qtbase/config.tests/stl
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/stl && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ -O2 -w -fPIC  -I/opt/repositories/qt5_sources/qtbase/config.tests/stl -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o stltest.o /opt/repositories/qt5_sources/qtbase/config.tests/stl/stltest.cpp
+> g++ --sysroot=/ -Wl,-O1 -o stl stltest.o      
+test config.qtbase.tests.stl succeeded
+executing config test x86SimdAlways
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'SIMD=aesni avx avx2 avx512bw avx512cd avx512dq avx512er avx512f avx512ifma avx512pf avx512vbmi avx512vl f16c rdrnd shani sse2 sse3 sse4_1 sse4_2 ssse3' /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe --sysroot=/ -O2 -w -fPIC -DQT_COMPILER_SUPPORTS_AESNI -DQT_COMPILER_SUPPORTS_AVX -DQT_COMPILER_SUPPORTS_AVX2 -DQT_COMPILER_SUPPORTS_AVX512BW -DQT_COMPILER_SUPPORTS_AVX512CD -DQT_COMPILER_SUPPORTS_AVX512DQ -DQT_COMPILER_SUPPORTS_AVX512ER -DQT_COMPILER_SUPPORTS_AVX512F -DQT_COMPILER_SUPPORTS_AVX512IFMA -DQT_COMPILER_SUPPORTS_AVX512PF -DQT_COMPILER_SUPPORTS_AVX512VBMI -DQT_COMPILER_SUPPORTS_AVX512VL -DQT_COMPILER_SUPPORTS_F16C -DQT_COMPILER_SUPPORTS_RDRND -DQT_COMPILER_SUPPORTS_SHANI -DQT_COMPILER_SUPPORTS_SSE2 -DQT_COMPILER_SUPPORTS_SSE3 -DQT_COMPILER_SUPPORTS_SSE4_1 -DQT_COMPILER_SUPPORTS_SSE4_2 -DQT_COMPILER_SUPPORTS_SSSE3 -I/opt/repositories/qt5_sources/qtbase/config.tests/x86_simd -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtbase/config.tests/x86_simd/main.cpp
+> g++ --sysroot=/ -Wl,-O1 -o x86_simd main.o      
+test config.qtbase.tests.x86SimdAlways succeeded
+looking for library zstd
+Trying source 0 (type pkgConfig) of library zstd ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors libzstd '>=' 1.3
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library zstd ...
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/zstd && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += zstd' 'QMAKE_LIBS_ZSTD = -lzstd' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/zstd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/zstd && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ -O2 -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp:2:10: fatal error: zstd.h: No such file or directory
+>  #include <zstd.h>
+>           ^~~~~~~~
+> compilation terminated.
+> Makefile:167: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+ => source failed verification.
+test config.qtbase.libraries.zstd FAILED
+looking for library librt
+Trying source 0 (type inline) of library librt ...
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/librt && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += librt' 'QMAKE_LIBS_LIBRT = ' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/librt
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/librt && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o librt main.o      
+ => source accepted.
+test config.qtbase_corelib.libraries.librt succeeded
+executing config test clock-monotonic
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/clock-monotonic && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += librt' 'QMAKE_LIBS_LIBRT = ' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/clock-monotonic
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/clock-monotonic && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o clock-monotonic main.o      
+test config.qtbase_corelib.tests.clock-monotonic succeeded
+executing config test cxx11_future
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/cxx11_future && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/cxx11_future
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/cxx11_future && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o cxx11_future main.o   -lpthread   
+test config.qtbase_corelib.tests.cxx11_future succeeded
+executing config test eventfd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/eventfd && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/eventfd
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/eventfd && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o eventfd main.o      
+test config.qtbase_corelib.tests.eventfd succeeded
+executing config test futimens
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/futimens && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/futimens
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/futimens && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o futimens main.o      
+test config.qtbase_corelib.tests.futimens succeeded
+executing config test getauxval
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/getauxval && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/getauxval
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/getauxval && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o getauxval main.o      
+test config.qtbase_corelib.tests.getauxval succeeded
+executing config test getentropy
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/getentropy && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/getentropy
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/getentropy && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o getentropy main.o      
+test config.qtbase_corelib.tests.getentropy succeeded
+looking for library glib
+Trying source 0 (type pkgConfig) of library glib ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors glib-2.0 gthread-2.0
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion glib-2.0 gthread-2.0
+> 2.56.4
+> 2.56.4
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L glib-2.0 gthread-2.0
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l glib-2.0 gthread-2.0
+> -lgthread-2.0 -lglib-2.0
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags glib-2.0 gthread-2.0
+> -pthread -I//usr/include/glib-2.0 -I//usr/lib/x86_64-linux-gnu/glib-2.0/include
+Note: Dropped compiler flags '-pthread'.
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/glib && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += glib' 'QMAKE_LIBS_GLIB = -lgthread-2.0 -lglib-2.0' 'QMAKE_INCDIR_GLIB = //usr/include/glib-2.0 //usr/lib/x86_64-linux-gnu/glib-2.0/include' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/glib
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/glib && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -isystem /usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o glib main.o   -lgthread-2.0 -lglib-2.0   
+ => source accepted.
+test config.qtbase_corelib.libraries.glib succeeded
+executing config test glibc
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/glibc && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/glibc
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/glibc && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o glibc main.o      
+test config.qtbase_corelib.tests.glibc succeeded
+looking for library posix_iconv
+Trying source 0 (type inline) of library posix_iconv ...
+  => source failed condition 'config.openbsd || config.haiku'.
+Trying source 1 (type inline) of library posix_iconv ...
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/posix_iconv && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += posix_iconv' 'QMAKE_LIBS_POSIX_ICONV = ' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/posix_iconv
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/posix_iconv && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o posix_iconv main.o      
+ => source accepted.
+test config.qtbase_corelib.libraries.posix_iconv succeeded
+looking for library icu
+Trying source 0 (type inline) of library icu ...
+  => source failed condition 'config.win32 && !features.shared'.
+Trying source 1 (type inline) of library icu ...
+  => source failed condition 'config.win32 && features.shared'.
+Trying source 2 (type inline) of library icu ...
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/icu && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += icu' 'QMAKE_LIBS_ICU = -licui18n -licuuc -licudata' 'QMAKE_DEPENDS_ICU_CC = LIBDL' 'QMAKE_DEPENDS_ICU_LD = LIBDL' 'QMAKE_LIBS_LIBDL = -ldl' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/icu
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/icu && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o icu main.o   -licui18n -licuuc -licudata -ldl   
+ => source accepted.
+test config.qtbase_corelib.libraries.icu succeeded
+executing config test inotify
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/inotify && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/inotify
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/inotify && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o inotify main.o      
+test config.qtbase_corelib.tests.inotify succeeded
+executing config test ipc_sysv
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/ipc_sysv && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/ipc_sysv
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/ipc_sysv && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o ipc_sysv main.o      
+test config.qtbase_corelib.tests.ipc_sysv succeeded
+executing config test linkat
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/linkat && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/linkat
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/linkat && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o linkat main.o      
+test config.qtbase_corelib.tests.linkat succeeded
+executing config test ppoll
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/ppoll && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/ppoll
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/ppoll && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o ppoll main.o      
+test config.qtbase_corelib.tests.ppoll succeeded
+looking for library pcre2
+Trying source 0 (type pkgConfig) of library pcre2 ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors libpcre2-16
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library pcre2 ...
+pcre2.h not found in [] and global paths.
+  => source produced no result.
+test config.qtbase_corelib.libraries.pcre2 FAILED
+executing config test renameat2
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/renameat2 && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/renameat2
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/renameat2 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp: In function ‘int main(int, char**)’:
+> main.cpp:9:53: error: ‘RENAME_NOREPLACE’ was not declared in this scope
+>      renameat2(AT_FDCWD, argv[1], AT_FDCWD, argv[2], RENAME_NOREPLACE | RENAME_WHITEOUT);
+>                                                      ^~~~~~~~~~~~~~~~
+> main.cpp:9:53: note: suggested alternative: ‘_IOS_NOREPLACE’
+>      renameat2(AT_FDCWD, argv[1], AT_FDCWD, argv[2], RENAME_NOREPLACE | RENAME_WHITEOUT);
+>                                                      ^~~~~~~~~~~~~~~~
+>                                                      _IOS_NOREPLACE
+> main.cpp:9:72: error: ‘RENAME_WHITEOUT’ was not declared in this scope
+>      renameat2(AT_FDCWD, argv[1], AT_FDCWD, argv[2], RENAME_NOREPLACE | RENAME_WHITEOUT);
+>                                                                         ^~~~~~~~~~~~~~~
+> main.cpp:9:5: error: ‘renameat2’ was not declared in this scope
+>      renameat2(AT_FDCWD, argv[1], AT_FDCWD, argv[2], RENAME_NOREPLACE | RENAME_WHITEOUT);
+>      ^~~~~~~~~
+> main.cpp:9:5: note: suggested alternative: ‘renameat’
+>      renameat2(AT_FDCWD, argv[1], AT_FDCWD, argv[2], RENAME_NOREPLACE | RENAME_WHITEOUT);
+>      ^~~~~~~~~
+>      renameat
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+test config.qtbase_corelib.tests.renameat2 FAILED
+looking for library slog2
+Trying source 0 (type inline) of library slog2 ...
+sys/slog2.h not found in [] and global paths.
+  => source produced no result.
+test config.qtbase_corelib.libraries.slog2 FAILED
+executing config test statx
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/statx && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/statx
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/statx && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp: In function ‘int main(int, char**)’:
+> main.cpp:11:18: error: aggregate ‘main(int, char**)::statx statxbuf’ has incomplete type and cannot be defined
+>      struct statx statxbuf;
+>                   ^~~~~~~~
+> main.cpp:12:25: error: ‘STATX_BASIC_STATS’ was not declared in this scope
+>      unsigned int mask = STATX_BASIC_STATS;
+>                          ^~~~~~~~~~~~~~~~~
+> main.cpp:13:32: error: ‘AT_STATX_SYNC_AS_STAT’ was not declared in this scope
+>      return statx(AT_FDCWD, "", AT_STATX_SYNC_AS_STAT, mask, &statxbuf);
+>                                 ^~~~~~~~~~~~~~~~~~~~~
+> main.cpp:13:70: error: invalid use of incomplete type ‘struct main(int, char**)::statx’
+>      return statx(AT_FDCWD, "", AT_STATX_SYNC_AS_STAT, mask, &statxbuf);
+>                                                                       ^
+> main.cpp:11:12: note: forward declaration of ‘struct main(int, char**)::statx’
+>      struct statx statxbuf;
+>             ^~~~~
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+test config.qtbase_corelib.tests.statx FAILED
+looking for library libatomic
+Trying source 0 (type inline) of library libatomic ...
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libatomic && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += libatomic' 'QMAKE_LIBS_LIBATOMIC = ' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libatomic
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libatomic && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -std=gnu++11 -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o libatomic main.o      
+ => source accepted.
+test config.qtbase_corelib.libraries.libatomic succeeded
+looking for library doubleconversion
+Trying source 0 (type inline) of library doubleconversion ...
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/doubleconversion && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += doubleconversion' 'QMAKE_LIBS_DOUBLECONVERSION = -ldouble-conversion' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/doubleconversion
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/doubleconversion && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o doubleconversion main.o   -ldouble-conversion   
+ => source accepted.
+test config.qtbase_corelib.libraries.doubleconversion succeeded
+executing config test cloexec
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/cloexec && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/cloexec
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/cloexec && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o cloexec main.o      
+test config.qtbase_corelib.tests.cloexec succeeded
+executing config test cxx11_random
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/cxx11_random && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/cxx11_random
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/cxx11_random && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o cxx11_random main.o      
+test config.qtbase_corelib.tests.cxx11_random succeeded
+executing config test atomicfptr
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/atomicfptr && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/atomicfptr
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/atomicfptr && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -std=gnu++11 -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o atomicfptr main.o      
+test config.qtbase_corelib.tests.atomicfptr succeeded
+looking for library openssl_headers
+Trying source 0 (type inline) of library openssl_headers ...
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/openssl_headers && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += openssl_headers' 'QMAKE_LIBS_OPENSSL_HEADERS = ' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/openssl_headers
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/openssl_headers && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o openssl_headers main.o      
+ => source accepted.
+test config.qtbase_network.libraries.openssl_headers succeeded
+executing config test dtls
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/dtls && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += openssl_headers' 'QMAKE_LIBS_OPENSSL_HEADERS = ' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/dtls
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/dtls && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o dtls main.o      
+test config.qtbase_network.tests.dtls succeeded
+Trying source 0 (type makeSpec) of library network ...
+ => source accepted.
+executing config test getifaddrs
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/getifaddrs && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += network' 'QMAKE_LIBS_NETWORK = ' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/getifaddrs
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/getifaddrs && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o getifaddrs main.o      
+test config.qtbase_network.tests.getifaddrs succeeded
+looking for library gssapi
+Trying source 0 (type inline) of library gssapi ...
+  => source failed condition 'config.darwin'.
+Trying source 1 (type pkgConfig) of library gssapi ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors krb5-gssapi
+pkg-config did not find package.
+  => source produced no result.
+Trying source 2 (type inline) of library gssapi ...
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/gssapi && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += gssapi' 'QMAKE_LIBS_GSSAPI = -lgssapi_krb5' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/gssapi
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/gssapi && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp:8:12: fatal error: gssapi/gssapi.h: No such file or directory
+>  #  include <gssapi/gssapi.h>
+>             ^~~~~~~~~~~~~~~~~
+> compilation terminated.
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+ => source failed verification.
+test config.qtbase_network.libraries.gssapi FAILED
+executing config test ipv6ifname
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/ipv6ifname && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += network' 'QMAKE_LIBS_NETWORK = ' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/ipv6ifname
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/ipv6ifname && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o ipv6ifname main.o      
+test config.qtbase_network.tests.ipv6ifname succeeded
+executing config test linux-netlink
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/linux-netlink && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/linux-netlink
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/linux-netlink && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o linux-netlink main.o      
+test config.qtbase_network.tests.linux-netlink succeeded
+executing config test openssl11
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/openssl11 && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += openssl_headers' 'QMAKE_LIBS_OPENSSL_HEADERS = ' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/openssl11
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/openssl11 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o openssl11 main.o      
+test config.qtbase_network.tests.openssl11 succeeded
+executing config test ocsp
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/ocsp && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += openssl_headers' 'QMAKE_LIBS_OPENSSL_HEADERS = ' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/ocsp
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/ocsp && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o ocsp main.o      
+test config.qtbase_network.tests.ocsp succeeded
+looking for library xkbcommon
+Trying source 0 (type pkgConfig) of library xkbcommon ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors xkbcommon '>=' 0.5.0
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion xkbcommon '>=' 0.5.0
+> 0.8.2
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L xkbcommon '>=' 0.5.0
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l xkbcommon '>=' 0.5.0
+> -lxkbcommon
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags xkbcommon '>=' 0.5.0
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xkbcommon && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += xkbcommon' 'QMAKE_LIBS_XKBCOMMON = -lxkbcommon' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xkbcommon
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xkbcommon && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o xkbcommon main.o   -lxkbcommon   
+ => source accepted.
+test config.qtbase_gui.libraries.xkbcommon succeeded
+looking for library xcb
+Trying source 0 (type pkgConfig) of library xcb ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors xcb '>=' 1.9
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion xcb '>=' 1.9
+> 1.13
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L xcb '>=' 1.9
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l xcb '>=' 1.9
+> -lxcb
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags xcb '>=' 1.9
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xcb && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += xcb' 'QMAKE_LIBS_XCB = -lxcb' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xcb
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xcb && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o xcb main.o   -lxcb   
+ => source accepted.
+test config.qtbase_gui.libraries.xcb succeeded
+looking for library atspi
+Trying source 0 (type pkgConfig) of library atspi ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors atspi-2
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion atspi-2
+> 2.28.0
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L atspi-2
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l atspi-2
+> -latspi -ldbus-1 -lglib-2.0
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags atspi-2
+> -I//usr/include/at-spi-2.0 -I//usr/include/dbus-1.0 -I//usr/lib/x86_64-linux-gnu/dbus-1.0/include -I//usr/include/glib-2.0 -I//usr/lib/x86_64-linux-gnu/glib-2.0/include
+ => source accepted.
+test config.qtbase_gui.libraries.atspi succeeded
+looking for library opengl
+Trying source 0 (type pkgConfig) of library opengl ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors gl
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion gl
+> 19.0.8
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L gl
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l gl
+> -lGL
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags gl
+> -I//usr/include/libdrm
+header entry 'config.qtbase_gui.libraries.opengl.headers.0' passed condition.
+header entry 'config.qtbase_gui.libraries.opengl.headers.0' passed condition.
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/opengl && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += opengl' 'QMAKE_LIBS_OPENGL = -lGL' 'QMAKE_INCDIR_OPENGL = //usr/include/libdrm' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/opengl
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/opengl && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -isystem /usr/include/libdrm -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o opengl main.o   -lGL   
+ => source accepted.
+test config.qtbase_gui.libraries.opengl succeeded
+looking for library drm
+Trying source 0 (type pkgConfig) of library drm ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors libdrm
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion libdrm
+> 2.4.97
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L libdrm
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l libdrm
+> -ldrm
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags libdrm
+> -I//usr/include/libdrm
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/drm && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += drm' 'QMAKE_LIBS_DRM = -ldrm' 'QMAKE_INCDIR_DRM = //usr/include/libdrm' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/drm
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/drm && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -isystem /usr/include/libdrm -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o drm main.o   -ldrm   
+ => source accepted.
+test config.qtbase_gui.libraries.drm succeeded
+executing config test drm_atomic
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/drm_atomic && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += drm' 'QMAKE_LIBS_DRM = -ldrm' 'QMAKE_INCDIR_DRM = //usr/include/libdrm' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/drm_atomic
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/drm_atomic && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -isystem /usr/include/libdrm -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o drm_atomic main.o   -ldrm   
+test config.qtbase_gui.tests.drm_atomic succeeded
+looking for library egl
+Trying source 0 (type pkgConfig) of library egl ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors egl
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion egl
+> 19.0.8
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L egl
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l egl
+> -lEGL
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags egl
+> -I//usr/include/libdrm
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/egl && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = -lEGL' 'QMAKE_INCDIR_EGL = //usr/include/libdrm' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/egl
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/egl && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -isystem /usr/include/libdrm -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o egl main.o   -lEGL   
+ => source accepted.
+test config.qtbase_gui.libraries.egl succeeded
+looking for library xlib
+Trying source 0 (type makeSpec) of library xlib ...
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xlib && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += xlib' 'QMAKE_LIBS_XLIB = -lXext -lX11 -lm' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xlib
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xlib && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o xlib main.o   -lXext -lX11 -lm   
+ => source accepted.
+test config.qtbase_gui.libraries.xlib succeeded
+executing config test egl-x11
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/egl-x11 && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += egl xlib' 'QMAKE_LIBS_XLIB = -lXext -lX11 -lm' 'QMAKE_LIBS_EGL = -lEGL' 'QMAKE_INCDIR_EGL = //usr/include/libdrm' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/egl-x11
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/egl-x11 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -isystem /usr/include/libdrm -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o egl-x11 main.o   -lEGL -lXext -lX11 -lm   
+test config.qtbase_gui.tests.egl-x11 succeeded
+Trying source 0 (type pkgConfig) of library bcm_host ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors bcm_host
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type makeSpec) of library bcm_host ...
+bcm_host.h not found in [] and global paths.
+  => source produced no result.
+executing config test egl-egldevice
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/egl-egldevice && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = -lEGL' 'QMAKE_INCDIR_EGL = //usr/include/libdrm' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/egl-egldevice
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/egl-egldevice && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -isystem /usr/include/libdrm -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o egl-egldevice main.o   -lEGL   
+test config.qtbase_gui.tests.egl-egldevice succeeded
+looking for library gbm
+Trying source 0 (type pkgConfig) of library gbm ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors gbm
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion gbm
+> 19.0.8
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L gbm
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l gbm
+> -lgbm
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags gbm
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/gbm && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += gbm' 'QMAKE_LIBS_GBM = -lgbm' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/gbm
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/gbm && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o gbm main.o   -lgbm   
+ => source accepted.
+test config.qtbase_gui.libraries.gbm succeeded
+executing config test egl-mali
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/egl-mali && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = -lEGL' 'QMAKE_INCDIR_EGL = //usr/include/libdrm' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/egl-mali
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/egl-mali && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -isystem /usr/include/libdrm -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp:2:10: fatal error: EGL/fbdev_window.h: No such file or directory
+>  #include <EGL/fbdev_window.h>
+>           ^~~~~~~~~~~~~~~~~~~~
+> compilation terminated.
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+test config.qtbase_gui.tests.egl-mali FAILED
+executing config test egl-mali-2
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/egl-mali-2 && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = -lEGL' 'QMAKE_INCDIR_EGL = //usr/include/libdrm' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/egl-mali-2
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/egl-mali-2 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -isystem /usr/include/libdrm -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp: In function ‘int main(int, char**)’:
+> main.cpp:8:5: error: ‘mali_native_window’ was not declared in this scope
+>      mali_native_window *w = 0;
+>      ^~~~~~~~~~~~~~~~~~
+> main.cpp:8:5: note: suggested alternative: ‘PointerWindow’
+>      mali_native_window *w = 0;
+>      ^~~~~~~~~~~~~~~~~~
+>      PointerWindow
+> main.cpp:8:25: error: ‘w’ was not declared in this scope
+>      mali_native_window *w = 0;
+>                          ^
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+test config.qtbase_gui.tests.egl-mali-2 FAILED
+executing config test egl-viv
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/egl-viv && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = -lEGL' 'QMAKE_INCDIR_EGL = //usr/include/libdrm' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/egl-viv
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/egl-viv && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC -DEGL_API_FB=1 -DLINUX=1 -I. -isystem /usr/include/libdrm -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp:3:10: fatal error: EGL/eglvivante.h: No such file or directory
+>  #include <EGL/eglvivante.h>
+>           ^~~~~~~~~~~~~~~~~~
+> compilation terminated.
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+test config.qtbase_gui.tests.egl-viv FAILED
+looking for library xcb_xlib
+Trying source 0 (type pkgConfig) of library xcb_xlib ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors x11-xcb
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion x11-xcb
+> 1.6.4
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L x11-xcb
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l x11-xcb
+> -lX11-xcb -lX11 -lxcb
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags x11-xcb
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xcb_xlib && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += xcb_xlib' 'QMAKE_LIBS_XCB_XLIB = -lX11-xcb' 'QMAKE_DEPENDS_XCB_XLIB_CC = XCB XLIB' 'QMAKE_DEPENDS_XCB_XLIB_LD = XCB XLIB' 'QMAKE_LIBS_XLIB = -lXext -lX11 -lm' 'QMAKE_LIBS_XCB = -lxcb' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xcb_xlib
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xcb_xlib && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o xcb_xlib main.o   -lX11-xcb -lxcb -lXext -lX11 -lm   
+ => source accepted.
+test config.qtbase_gui.libraries.xcb_xlib succeeded
+executing config test evdev
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/evdev && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/evdev
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/evdev && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o evdev main.o      
+test config.qtbase_gui.tests.evdev succeeded
+looking for library freetype
+Trying source 0 (type pkgConfig) of library freetype ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors freetype2
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion freetype2
+> 21.0.15
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L freetype2
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l freetype2
+> -lfreetype
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags freetype2
+> -I//usr/include/freetype2 -I//usr/include/libpng16
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/freetype && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += freetype' 'QMAKE_LIBS_FREETYPE = -lfreetype' 'QMAKE_INCDIR_FREETYPE = //usr/include/freetype2 //usr/include/libpng16' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/freetype
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/freetype && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -isystem /usr/include/freetype2 -isystem /usr/include/libpng16 -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o freetype main.o   -lfreetype   
+ => source accepted.
+test config.qtbase_gui.libraries.freetype succeeded
+looking for library fontconfig
+Trying source 0 (type pkgConfig) of library fontconfig ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors fontconfig
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion fontconfig
+> 2.12.6
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L fontconfig
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l fontconfig
+> -lfontconfig -lfreetype
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags fontconfig
+> -I//usr/include/freetype2 -I//usr/include/libpng16 -I//usr/include/freetype2 -I//usr/include/libpng16
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/fontconfig && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += fontconfig' 'QMAKE_LIBS_FONTCONFIG = -lfontconfig' 'QMAKE_DEPENDS_FONTCONFIG_CC = FREETYPE' 'QMAKE_DEPENDS_FONTCONFIG_LD = FREETYPE' 'QMAKE_LIBS_FREETYPE = -lfreetype' 'QMAKE_INCDIR_FREETYPE = //usr/include/freetype2 //usr/include/libpng16' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/fontconfig
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/fontconfig && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -isystem /usr/include/freetype2 -isystem /usr/include/libpng16 -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o fontconfig main.o   -lfontconfig -lfreetype   
+ => source accepted.
+test config.qtbase_gui.libraries.fontconfig succeeded
+looking for library libinput
+Trying source 0 (type pkgConfig) of library libinput ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors libinput
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion libinput
+> 1.10.4
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L libinput
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l libinput
+> -linput
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags libinput
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libinput && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += libinput' 'QMAKE_LIBS_LIBINPUT = -linput' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libinput
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libinput && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o libinput main.o   -linput   
+ => source accepted.
+test config.qtbase_gui.libraries.libinput succeeded
+executing config test libinput_axis_api
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libinput_axis_api && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += libinput' 'QMAKE_LIBS_LIBINPUT = -linput' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libinput_axis_api
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libinput_axis_api && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o libinput_axis_api main.o   -linput   
+test config.qtbase_gui.tests.libinput_axis_api succeeded
+executing config test linuxfb
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/linuxfb && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/linuxfb
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/linuxfb && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o linuxfb main.o      
+test config.qtbase_gui.tests.linuxfb succeeded
+looking for library mtdev
+Trying source 0 (type pkgConfig) of library mtdev ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors mtdev
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion mtdev
+> 1.1.5
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L mtdev
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l mtdev
+> -lmtdev
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags mtdev
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/mtdev && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += mtdev' 'QMAKE_LIBS_MTDEV = -lmtdev' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/mtdev
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/mtdev && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o mtdev main.o   -lmtdev   
+ => source accepted.
+test config.qtbase_gui.libraries.mtdev succeeded
+looking for library openvg
+Trying source 0 (type pkgConfig) of library openvg ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors vg
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type makeSpec) of library openvg ...
+VG/openvg.h not found in [] and global paths.
+  => source produced no result.
+test config.qtbase_gui.libraries.openvg FAILED
+executing config test qpa_default_platform
+test config.qtbase_gui.tests.qpa_default_platform gave result xcb
+looking for library harfbuzz
+Trying source 0 (type inline) of library harfbuzz ...
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/harfbuzz && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += harfbuzz' 'QMAKE_LIBS_HARFBUZZ = -lharfbuzz' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/harfbuzz
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/harfbuzz && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o harfbuzz main.o   -lharfbuzz   
+ => source accepted.
+test config.qtbase_gui.libraries.harfbuzz succeeded
+looking for library libjpeg
+Trying source 0 (type inline) of library libjpeg ...
+  => source failed condition 'config.msvc'.
+Trying source 1 (type inline) of library libjpeg ...
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libjpeg && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += libjpeg' 'QMAKE_LIBS_LIBJPEG = -ljpeg' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libjpeg
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/libjpeg && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o libjpeg main.o   -ljpeg   
+ => source accepted.
+test config.qtbase_gui.libraries.libjpeg succeeded
+looking for library libmd4c
+Trying source 0 (type pkgConfig) of library libmd4c ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors md4c
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library libmd4c ...
+md4c.h not found in [] and global paths.
+  => source produced no result.
+test config.qtbase_gui.libraries.libmd4c FAILED
+looking for library xcb_icccm
+Trying source 0 (type pkgConfig) of library xcb_icccm ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors xcb-icccm '>=' 0.3.9
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion xcb-icccm '>=' 0.3.9
+> 0.4.1
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L xcb-icccm '>=' 0.3.9
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l xcb-icccm '>=' 0.3.9
+> -lxcb-icccm -lxcb
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags xcb-icccm '>=' 0.3.9
+ => source accepted.
+test config.qtbase_gui.libraries.xcb_icccm succeeded
+looking for library xcb_shm
+Trying source 0 (type pkgConfig) of library xcb_shm ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors xcb-shm
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion xcb-shm
+> 1.13
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L xcb-shm
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l xcb-shm
+> -lxcb-shm
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags xcb-shm
+ => source accepted.
+test config.qtbase_gui.libraries.xcb_shm succeeded
+looking for library xcb_image
+Trying source 0 (type pkgConfig) of library xcb_image ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors xcb-image '>=' 0.3.9
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion xcb-image '>=' 0.3.9
+> 0.4.0
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L xcb-image '>=' 0.3.9
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l xcb-image '>=' 0.3.9
+> -lxcb-image -lxcb -lxcb-shm
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags xcb-image '>=' 0.3.9
+ => source accepted.
+test config.qtbase_gui.libraries.xcb_image succeeded
+looking for library xcb_keysyms
+Trying source 0 (type pkgConfig) of library xcb_keysyms ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors xcb-keysyms '>=' 0.3.9
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion xcb-keysyms '>=' 0.3.9
+> 0.4.0
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L xcb-keysyms '>=' 0.3.9
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l xcb-keysyms '>=' 0.3.9
+> -lxcb-keysyms -lxcb
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags xcb-keysyms '>=' 0.3.9
+ => source accepted.
+test config.qtbase_gui.libraries.xcb_keysyms succeeded
+looking for library xcb_randr
+Trying source 0 (type pkgConfig) of library xcb_randr ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors xcb-randr
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion xcb-randr
+> 1.13
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L xcb-randr
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l xcb-randr
+> -lxcb-randr
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags xcb-randr
+ => source accepted.
+test config.qtbase_gui.libraries.xcb_randr succeeded
+looking for library xcb_render
+Trying source 0 (type pkgConfig) of library xcb_render ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors xcb-render
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion xcb-render
+> 1.13
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L xcb-render
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l xcb-render
+> -lxcb-render
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags xcb-render
+ => source accepted.
+test config.qtbase_gui.libraries.xcb_render succeeded
+looking for library xcb_renderutil
+Trying source 0 (type pkgConfig) of library xcb_renderutil ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors xcb-renderutil '>=' 0.3.9
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion xcb-renderutil '>=' 0.3.9
+> 0.3.9
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L xcb-renderutil '>=' 0.3.9
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l xcb-renderutil '>=' 0.3.9
+> -lxcb-render-util -lxcb -lxcb-render
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags xcb-renderutil '>=' 0.3.9
+ => source accepted.
+test config.qtbase_gui.libraries.xcb_renderutil succeeded
+looking for library xcb_shape
+Trying source 0 (type pkgConfig) of library xcb_shape ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors xcb-shape
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion xcb-shape
+> 1.13
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L xcb-shape
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l xcb-shape
+> -lxcb-shape
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags xcb-shape
+ => source accepted.
+test config.qtbase_gui.libraries.xcb_shape succeeded
+looking for library xcb_sync
+Trying source 0 (type pkgConfig) of library xcb_sync ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors xcb-sync
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion xcb-sync
+> 1.13
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L xcb-sync
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l xcb-sync
+> -lxcb-sync
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags xcb-sync
+ => source accepted.
+test config.qtbase_gui.libraries.xcb_sync succeeded
+looking for library xcb_xfixes
+Trying source 0 (type pkgConfig) of library xcb_xfixes ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors xcb-xfixes
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion xcb-xfixes
+> 1.13
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L xcb-xfixes
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l xcb-xfixes
+> -lxcb-xfixes
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags xcb-xfixes
+ => source accepted.
+test config.qtbase_gui.libraries.xcb_xfixes succeeded
+looking for library xcb_xinerama
+Trying source 0 (type pkgConfig) of library xcb_xinerama ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors xcb-xinerama
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion xcb-xinerama
+> 1.13
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L xcb-xinerama
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l xcb-xinerama
+> -lxcb-xinerama
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags xcb-xinerama
+ => source accepted.
+test config.qtbase_gui.libraries.xcb_xinerama succeeded
+executing config test xcb_syslibs
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xcb_syslibs && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += xcb_icccm xcb_image xcb_keysyms xcb_randr xcb_render xcb_renderutil xcb_shape xcb_shm xcb_sync xcb_xfixes xcb_xinerama xcb' 'QMAKE_LIBS_XCB = -lxcb' 'QMAKE_LIBS_XCB_XINERAMA = -lxcb-xinerama' 'QMAKE_DEPENDS_XCB_XINERAMA_CC = XCB' 'QMAKE_DEPENDS_XCB_XINERAMA_LD = XCB' 'QMAKE_LIBS_XCB_XFIXES = -lxcb-xfixes' 'QMAKE_DEPENDS_XCB_XFIXES_CC = XCB' 'QMAKE_DEPENDS_XCB_XFIXES_LD = XCB' 'QMAKE_LIBS_XCB_SYNC = -lxcb-sync' 'QMAKE_DEPENDS_XCB_SYNC_CC = XCB' 'QMAKE_DEPENDS_XCB_SYNC_LD = XCB' 'QMAKE_LIBS_XCB_SHM = -lxcb-shm' 'QMAKE_DEPENDS_XCB_SHM_CC = XCB' 'QMAKE_DEPENDS_XCB_SHM_LD = XCB' 'QMAKE_LIBS_XCB_SHAPE = -lxcb-shape' 'QMAKE_DEPENDS_XCB_SHAPE_CC = XCB' 'QMAKE_DEPENDS_XCB_SHAPE_LD = XCB' 'QMAKE_LIBS_XCB_RENDERUTIL = -lxcb-render-util' 'QMAKE_DEPENDS_XCB_RENDERUTIL_CC = XCB XCB_RENDER' 'QMAKE_DEPENDS_XCB_RENDERUTIL_LD = XCB XCB_RENDER' 'QMAKE_LIBS_XCB_RENDER = -lxcb-render' 'QMAKE_DEPENDS_XCB_RENDER_CC = XCB' 'QMAKE_DEPENDS_XCB_RENDER_LD = XCB' 'QMAKE_LIBS_XCB_RANDR = -lxcb-randr' 'QMAKE_DEPENDS_XCB_RANDR_CC = XCB' 'QMAKE_DEPENDS_XCB_RANDR_LD = XCB' 'QMAKE_LIBS_XCB_KEYSYMS = -lxcb-keysyms' 'QMAKE_DEPENDS_XCB_KEYSYMS_CC = XCB' 'QMAKE_DEPENDS_XCB_KEYSYMS_LD = XCB' 'QMAKE_LIBS_XCB_IMAGE = -lxcb-image' 'QMAKE_DEPENDS_XCB_IMAGE_CC = XCB_SHM XCB' 'QMAKE_DEPENDS_XCB_IMAGE_LD = XCB_SHM XCB' 'QMAKE_LIBS_XCB_ICCCM = -lxcb-icccm' 'QMAKE_DEPENDS_XCB_ICCCM_CC = XCB' 'QMAKE_DEPENDS_XCB_ICCCM_LD = XCB' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xcb_syslibs
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xcb_syslibs && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o xcb_syslibs main.o   -lxcb-icccm -lxcb-image -lxcb-shm -lxcb-keysyms -lxcb-randr -lxcb-render-util -lxcb-render -lxcb-shape -lxcb-sync -lxcb-xfixes -lxcb-xinerama -lxcb   
+test config.qtbase_gui.tests.xcb_syslibs succeeded
+looking for library tslib
+Trying source 0 (type inline) of library tslib ...
+tslib.h not found in [] and global paths.
+  => source produced no result.
+test config.qtbase_gui.libraries.tslib FAILED
+looking for library vulkan
+Trying source 0 (type pkgConfig) of library vulkan ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors vulkan
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type makeSpec) of library vulkan ...
+vulkan/vulkan.h not found in [] and global paths.
+  => source produced no result.
+test config.qtbase_gui.libraries.vulkan FAILED
+executing config test x11prefix
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors x11
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --variable=prefix x11
+> /usr
+test config.qtbase_gui.tests.x11prefix gave result /usr
+looking for library xcb_glx
+Trying source 0 (type pkgConfig) of library xcb_glx ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors xcb-glx
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion xcb-glx
+> 1.13
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L xcb-glx
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l xcb-glx
+> -lxcb-glx
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags xcb-glx
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xcb_glx && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += xcb_glx' 'QMAKE_LIBS_XCB_GLX = -lxcb-glx' 'QMAKE_DEPENDS_XCB_GLX_CC = XCB' 'QMAKE_DEPENDS_XCB_GLX_LD = XCB' 'QMAKE_LIBS_XCB = -lxcb' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xcb_glx
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xcb_glx && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o xcb_glx main.o   -lxcb-glx -lxcb   
+ => source accepted.
+test config.qtbase_gui.libraries.xcb_glx succeeded
+looking for library x11sm
+Trying source 0 (type pkgConfig) of library x11sm ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors sm ice
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion sm ice
+> 1.2.2
+> 1.0.9
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L sm ice
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l sm ice
+> -lSM -lICE
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags sm ice
+ => source accepted.
+test config.qtbase_gui.libraries.x11sm succeeded
+looking for library xcb_xinput
+Trying source 0 (type pkgConfig) of library xcb_xinput ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors xcb-xinput '>=' 1.12
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library xcb_xinput ...
+xcb/xinput.h not found in [] and global paths.
+  => source produced no result.
+test config.qtbase_gui.libraries.xcb_xinput FAILED
+looking for library xcb_xkb
+Trying source 0 (type pkgConfig) of library xcb_xkb ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors xcb-xkb '>=' 1.10
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion xcb-xkb '>=' 1.10
+> 1.13
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L xcb-xkb '>=' 1.10
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l xcb-xkb '>=' 1.10
+> -lxcb-xkb
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags xcb-xkb '>=' 1.10
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xcb_xkb && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += xcb_xkb' 'QMAKE_LIBS_XCB_XKB = -lxcb-xkb' 'QMAKE_DEPENDS_XCB_XKB_CC = XCB' 'QMAKE_DEPENDS_XCB_XKB_LD = XCB' 'QMAKE_LIBS_XCB = -lxcb' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xcb_xkb
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xcb_xkb && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o xcb_xkb main.o   -lxcb-xkb -lxcb   
+ => source accepted.
+test config.qtbase_gui.libraries.xcb_xkb succeeded
+looking for library xkbcommon_x11
+Trying source 0 (type pkgConfig) of library xkbcommon_x11 ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors xkbcommon-x11
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion xkbcommon-x11
+> 0.8.2
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L xkbcommon-x11
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l xkbcommon-x11
+> -lxkbcommon-x11 -lxkbcommon
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags xkbcommon-x11
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xkbcommon_x11 && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += xkbcommon_x11' 'QMAKE_LIBS_XKBCOMMON_X11 = -lxkbcommon-x11 -lxkbcommon' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xkbcommon_x11
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/xkbcommon_x11 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o xkbcommon_x11 main.o   -lxkbcommon-x11 -lxkbcommon   
+ => source accepted.
+test config.qtbase_gui.libraries.xkbcommon_x11 succeeded
+looking for library gtk3
+Trying source 0 (type pkgConfig) of library gtk3 ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors gtk+-3.0 '>=' 3.6
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion gtk+-3.0 '>=' 3.6
+> 3.22.30
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L gtk+-3.0 '>=' 3.6
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l gtk+-3.0 '>=' 3.6
+> -lgtk-3 -lgdk-3 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo-gobject -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags gtk+-3.0 '>=' 3.6
+> -pthread -I//usr/include/gtk-3.0 -I//usr/include/at-spi2-atk/2.0 -I//usr/include/at-spi-2.0 -I//usr/include/dbus-1.0 -I//usr/lib/x86_64-linux-gnu/dbus-1.0/include -I//usr/include/gtk-3.0 -I//usr/include/gio-unix-2.0/ -I//usr/include/cairo -I//usr/include/pango-1.0 -I//usr/include/harfbuzz -I//usr/include/pango-1.0 -I//usr/include/atk-1.0 -I//usr/include/cairo -I//usr/include/pixman-1 -I//usr/include/freetype2 -I//usr/include/libpng16 -I//usr/include/freetype2 -I//usr/include/libpng16 -I//usr/include/gdk-pixbuf-2.0 -I//usr/include/libpng16 -I//usr/include/glib-2.0 -I//usr/lib/x86_64-linux-gnu/glib-2.0/include
+Note: Dropped compiler flags '-pthread'.
+ => source accepted.
+test config.qtbase_widgets.libraries.gtk3 succeeded
+looking for library cups
+Trying source 0 (type inline) of library cups ...
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/cups && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += cups' 'QMAKE_LIBS_CUPS = -lcups' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/cups
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/cups && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o cups main.o   -lcups   
+ => source accepted.
+test config.qtbase_printsupport.libraries.cups succeeded
+looking for library db2
+Trying source 0 (type inline) of library db2 ...
+  => source failed condition 'config.win32'.
+Trying source 1 (type inline) of library db2 ...
+sqlcli.h not found in [] and global paths.
+sqlcli1.h not found in [] and global paths.
+  => source produced no result.
+test config.qtbase_sqldrivers.libraries.db2 FAILED
+looking for library ibase
+Trying source 0 (type inline) of library ibase ...
+  => source failed condition 'config.win32'.
+Trying source 1 (type inline) of library ibase ...
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/ibase && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += ibase' 'QMAKE_LIBS_IBASE = -lgds' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/ibase
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/ibase && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o ibase main.o   -lgds   
+> /usr/bin/ld: cannot find -lgds
+> collect2: error: ld returned 1 exit status
+> Makefile:67: recipe for target 'ibase' failed
+> make: *** [ibase] Error 1
+ => source failed verification.
+test config.qtbase_sqldrivers.libraries.ibase FAILED
+looking for library mysql
+Trying source 0 (type mysqlConfig) of library mysql ...
+mysql_config not found.
+  => source produced no result.
+Trying source 1 (type mysqlConfig) of library mysql ...
+mysql_config not found.
+  => source produced no result.
+Trying source 2 (type mysqlConfig) of library mysql ...
+mysql_config not found.
+  => source produced no result.
+Trying source 3 (type mysqlConfig) of library mysql ...
+mysql_config not found.
+  => source produced no result.
+Trying source 4 (type inline) of library mysql ...
+mysql.h not found in [] and global paths.
+  => source produced no result.
+Trying source 5 (type inline) of library mysql ...
+  => source failed condition 'config.win32'.
+Trying source 6 (type inline) of library mysql ...
+mysql.h not found in [] and global paths.
+  => source produced no result.
+test config.qtbase_sqldrivers.libraries.mysql FAILED
+looking for library oci
+Trying source 0 (type inline) of library oci ...
+  => source failed condition 'config.win32'.
+Trying source 1 (type inline) of library oci ...
+oci.h not found in [] and global paths.
+  => source produced no result.
+test config.qtbase_sqldrivers.libraries.oci FAILED
+looking for library odbc
+Trying source 0 (type inline) of library odbc ...
+  => source failed condition 'config.win32'.
+Trying source 1 (type inline) of library odbc ...
+  => source failed condition 'config.darwin'.
+Trying source 2 (type inline) of library odbc ...
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/odbc && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += odbc' 'QMAKE_LIBS_ODBC = -lodbc' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/odbc
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/odbc && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o odbc main.o   -lodbc   
+ => source accepted.
+test config.qtbase_sqldrivers.libraries.odbc succeeded
+looking for library psql
+Trying source 0 (type pkgConfig) of library psql ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors libpq
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion libpq
+> 10.10
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L libpq
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l libpq
+> -lpq
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags libpq
+> -I//usr/include/postgresql
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/psql && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += psql' 'QMAKE_LIBS_PSQL = -lpq' 'QMAKE_INCDIR_PSQL = //usr/include/postgresql' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/psql
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/psql && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -isystem /usr/include/postgresql -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o psql main.o   -lpq   
+ => source accepted.
+test config.qtbase_sqldrivers.libraries.psql succeeded
+looking for library sqlite2
+Trying source 0 (type inline) of library sqlite2 ...
+sqlite.h not found in [] and global paths.
+  => source produced no result.
+test config.qtbase_sqldrivers.libraries.sqlite2 FAILED
+looking for library tds
+Trying source 0 (type sybaseEnv) of library tds ...
+  => source failed condition 'config.win32'.
+Trying source 1 (type sybaseEnv) of library tds ...
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/tds && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += tds' 'QMAKE_LIBS_TDS = -lsybdb' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/tds
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/tds && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o tds main.o   -lsybdb   
+ => source accepted.
+test config.qtbase_sqldrivers.libraries.tds succeeded
+Trying source 0 (type inline) of library jasper ...
+jasper/jasper.h not found in [] and global paths.
+  => source produced no result.
+Trying source 0 (type inline) of library mng ...
+libmng.h not found in [] and global paths.
+  => source produced no result.
+Trying source 0 (type inline) of library tiff ...
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/tiff && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += tiff' 'QMAKE_LIBS_TIFF = -ltiff' /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/tiff
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/tiff && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o tiff main.o   -ltiff   
+ => source accepted.
+Trying source 0 (type inline) of library webp ...
+webp/decode.h not found in [] and global paths.
+webp/encode.h not found in [] and global paths.
+webp/demux.h not found in [] and global paths.
+webp/mux.h not found in [] and global paths.
+  => source produced no result.
+executing config test pointer_64bit
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/pointer_64bit && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/pointer_64bit
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/pointer_64bit && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ --sysroot=/ --sysroot=/ -o pointer_64bit main.o      
+test config.qtdeclarative_qml.tests.pointer_64bit succeeded
+executing config test d3d12
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/d3d12 && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/qt5_sources/qtdeclarative/config.tests/d3d12
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/d3d12 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I/opt/repositories/qt5_sources/qtdeclarative/config.tests/d3d12 -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o d3d12.o /opt/repositories/qt5_sources/qtdeclarative/config.tests/d3d12/d3d12.cpp
+> /opt/repositories/qt5_sources/qtdeclarative/config.tests/d3d12/d3d12.cpp:40:10: fatal error: d3d12.h: No such file or directory
+>  #include <d3d12.h>
+>           ^~~~~~~~~
+> compilation terminated.
+> Makefile:169: recipe for target 'd3d12.o' failed
+> make: *** [d3d12.o] Error 1
+test config.qtdeclarative_quick.tests.d3d12 FAILED
+looking for library alsa
+Trying source 0 (type inline) of library alsa ...
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/alsa && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += alsa' 'QMAKE_LIBS_ALSA = -lasound' /opt/repositories/qt5_sources/qtmultimedia/config.tests/alsa
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/alsa && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I/opt/repositories/qt5_sources/qtmultimedia/config.tests/alsa -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o alsatest.o /opt/repositories/qt5_sources/qtmultimedia/config.tests/alsa/alsatest.cpp
+> g++ --sysroot=/ --sysroot=/ -o alsa alsatest.o   -lasound   
+ => source accepted.
+test config.qtmultimedia_multimedia.libraries.alsa succeeded
+looking for library gstreamer_1_0
+Trying source 0 (type pkgConfig) of library gstreamer_1_0 ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors gstreamer-1.0 gstreamer-base-1.0 gstreamer-audio-1.0 gstreamer-video-1.0 gstreamer-pbutils-1.0
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library gstreamer_1_0 ...
+  => source failed condition 'config.win32 || config.macos'.
+Trying source 2 (type inline) of library gstreamer_1_0 ...
+  => source failed condition 'config.android && input.gstreamer != '''.
+test config.qtmultimedia_multimedia.libraries.gstreamer_1_0 FAILED
+looking for library gstreamer_0_10
+Trying source 0 (type pkgConfig) of library gstreamer_0_10 ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors gstreamer-0.10 gstreamer-base-0.10 gstreamer-audio-0.10 gstreamer-video-0.10 gstreamer-pbutils-0.10 gstreamer-interfaces-0.10
+pkg-config did not find package.
+  => source produced no result.
+test config.qtmultimedia_multimedia.libraries.gstreamer_0_10 FAILED
+executing config test linux_v4l
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/linux_v4l && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" /opt/repositories/qt5_sources/qtmultimedia/config.tests/linux_v4l
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/linux_v4l && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I/opt/repositories/qt5_sources/qtmultimedia/config.tests/linux_v4l -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtmultimedia/config.tests/linux_v4l/main.cpp
+> g++ --sysroot=/ --sysroot=/ -o linux_v4l main.o      
+test config.qtmultimedia_multimedia.tests.linux_v4l succeeded
+looking for library openal
+Trying source 0 (type pkgConfig) of library openal ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors openal
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library openal ...
+  => source failed condition 'config.win32'.
+Trying source 2 (type inline) of library openal ...
+  => source failed condition 'config.darwin'.
+Trying source 3 (type inline) of library openal ...
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/openal && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += openal' 'QMAKE_LIBS_OPENAL = -lopenal' /opt/repositories/qt5_sources/qtmultimedia/config.tests/openal
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/openal && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC  -I/opt/repositories/qt5_sources/qtmultimedia/config.tests/openal -I. -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o main.o /opt/repositories/qt5_sources/qtmultimedia/config.tests/openal/main.cpp
+> /opt/repositories/qt5_sources/qtmultimedia/config.tests/openal/main.cpp:32:10: fatal error: AL/al.h: No such file or directory
+>  #include <AL/al.h>
+>           ^~~~~~~~~
+> compilation terminated.
+> Makefile:169: recipe for target 'main.o' failed
+> make: *** [main.o] Error 1
+ => source failed verification.
+test config.qtmultimedia_multimedia.libraries.openal FAILED
+looking for library pulseaudio
+Trying source 0 (type pkgConfig) of library pulseaudio ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors libpulse '>=' 0.9.10 libpulse-mainloop-glib
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --modversion libpulse '>=' 0.9.10 libpulse-mainloop-glib
+> 11.1
+> 11.1
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-L libpulse '>=' 0.9.10 libpulse-mainloop-glib
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --libs-only-l libpulse '>=' 0.9.10 libpulse-mainloop-glib
+> -lpulse-mainloop-glib -lpulse -lglib-2.0
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --cflags libpulse '>=' 0.9.10 libpulse-mainloop-glib
+> -D_REENTRANT -I//usr/include/glib-2.0 -I//usr/lib/x86_64-linux-gnu/glib-2.0/include
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/pulseaudio && PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /opt/repositories/fc-build-01/qt5_dbg_configuration/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared warn_off console single_arch" "QMAKE_CFLAGS += --sysroot=/" "QMAKE_CXXFLAGS += --sysroot=/" "QMAKE_LFLAGS += --sysroot=/" -early "CONFIG += cross_compile" 'QMAKE_USE += pulseaudio' 'QMAKE_LIBS_PULSEAUDIO = -lpulse-mainloop-glib -lpulse -lglib-2.0' 'QMAKE_INCDIR_PULSEAUDIO = //usr/include/glib-2.0 //usr/lib/x86_64-linux-gnu/glib-2.0/include' 'QMAKE_DEFINES_PULSEAUDIO = _REENTRANT' /opt/repositories/qt5_sources/qtmultimedia/config.tests/pulseaudio
++ cd /opt/repositories/fc-build-01/qt5_dbg_configuration/config.tests/pulseaudio && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe --sysroot=/ --sysroot=/ -g -w -fPIC -D_REENTRANT -I/opt/repositories/qt5_sources/qtmultimedia/config.tests/pulseaudio -I. -isystem /usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/opt/repositories/qt5_sources/qtbase/mkspecs/linux-g++ -o pulseaudio.o /opt/repositories/qt5_sources/qtmultimedia/config.tests/pulseaudio/pulseaudio.cpp
+> g++ --sysroot=/ --sysroot=/ -o pulseaudio pulseaudio.o   -lpulse-mainloop-glib -lpulse -lglib-2.0   
+ => source accepted.
+test config.qtmultimedia_multimedia.libraries.pulseaudio succeeded
+looking for library libresourceqt5
+Trying source 0 (type pkgConfig) of library libresourceqt5 ...
++ PKG_CONFIG_SYSROOT_DIR=/ PKG_CONFIG_LIBDIR=//usr/lib/pkgconfig://usr/share/pkgconfig://usr/lib/x86_64-linux-gnu/pkgconfig /usr/bin/pkg-config --exists --silence-errors libresourceqt5
+pkg-config did not find package.
+  => source produced no result.
+test config.qtmultimedia_multimedia.libraries.libresourceqt5 FAILED
+executing config test libclang
+test config.qttools_qdoc.tests.libclang FAILED

@@ -1,0 +1,13 @@
+prefix=//opt/repositories/qt5_opt_install
+exec_prefix=${prefix}
+libdir=/opt/repositories/qt5_opt_install/lib
+includedir=/opt/repositories/qt5_opt_install/include
+
+
+Name: Qt5 Script
+Description: Qt Script module
+Version: 5.14.0
+Libs: -L${libdir} -lQt5Script 
+Cflags: -DQT_SCRIPT_LIB -I${includedir}/QtScript -I${includedir}
+Requires: Qt5Core
+
