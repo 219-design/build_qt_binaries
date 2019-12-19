@@ -1,0 +1,3 @@
+[submodule "qmlfmt"]
+	path = qmlfmt
+	url = https://github.com/pestophagous/qmlfmt.git
