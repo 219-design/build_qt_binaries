@@ -1,4 +1,4 @@
-+ /opt/repositories/MINE_qt6/qtbase/configure -top-level -prefix /opt/repositories/KEEP_qt6_dbg_install -opensource -confirm-license -c++std c++17 -debug -ssl -sysroot / -no-pch -pkg-config -qt-libpng -qt-zlib -skip qt3d -skip qtactiveqt -skip qtandroidextras -skip qtcanvas3d -skip qtdatavis3d -skip qtdoc -skip qtdocgallery -skip qtfeedback -skip qtgamepad -skip qtlottie -skip qtmacextras -skip qtnetworkauth -skip qtpim -skip qtpurchasing -skip qtqa -skip qtquick3d -skip qtremoteobjects -skip qtrepotools -skip qtscxml -skip qtsensors -skip qtserialbus -skip qtsystems -skip qtwayland -skip qtwebchannel -skip qtwebengine -skip qtwebglplugin -skip qtwebsockets -skip qtwebview -skip qtwinextras -nomake tools -nomake examples
++ /opt/repositories/MINE_qt6/qtbase/configure -top-level -prefix /opt/repositories/KEEP_qt6_dbg_install -opensource -confirm-license -c++std c++17 -debug -ssl -sysroot / -no-pch -pkg-config -qt-libpng -qt-zlib -xcb -xkbcommon -skip qt3d -skip qtactiveqt -skip qtandroidextras -skip qtcanvas3d -skip qtdatavis3d -skip qtdoc -skip qtdocgallery -skip qtfeedback -skip qtgamepad -skip qtlottie -skip qtmacextras -skip qtnetworkauth -skip qtpim -skip qtpurchasing -skip qtqa -skip qtquick3d -skip qtremoteobjects -skip qtrepotools -skip qtscxml -skip qtsensors -skip qtserialbus -skip qtsystems -skip qtwayland -skip qtwebchannel -skip qtwebengine -skip qtwebglplugin -skip qtwebsockets -skip qtwebview -skip qtwinextras -nomake tools -nomake examples
 Overriding option 'libpng' with 'qt' (was: 'undefined')
 CMake Warning at /opt/repositories/MINE_qt6/qtbase/cmake/QtProcessConfigureArgs.cmake:369 (message):
   '-nomake tools' is not implemented yet.
@@ -17,7 +17,7 @@ Call Stack (most recent call first):
   /opt/repositories/MINE_qt6/qtbase/cmake/QtProcessConfigureArgs.cmake:1117 (qtConfAddWarning)
 
 
-'/opt/repositories/run_from_source/cmake-3.27.7-linux-x86_64/bin/cmake' '-DBUILD_qt3d=OFF' '-DBUILD_qtactiveqt=OFF' '-DBUILD_qtandroidextras=OFF' '-DBUILD_qtcanvas3d=OFF' '-DBUILD_qtdatavis3d=OFF' '-DBUILD_qtdoc=OFF' '-DBUILD_qtdocgallery=OFF' '-DBUILD_qtfeedback=OFF' '-DBUILD_qtgamepad=OFF' '-DBUILD_qtlottie=OFF' '-DBUILD_qtmacextras=OFF' '-DBUILD_qtnetworkauth=OFF' '-DBUILD_qtpim=OFF' '-DBUILD_qtpurchasing=OFF' '-DBUILD_qtqa=OFF' '-DBUILD_qtquick3d=OFF' '-DBUILD_qtremoteobjects=OFF' '-DBUILD_qtrepotools=OFF' '-DBUILD_qtscxml=OFF' '-DBUILD_qtsensors=OFF' '-DBUILD_qtserialbus=OFF' '-DBUILD_qtsystems=OFF' '-DBUILD_qtwayland=OFF' '-DBUILD_qtwebchannel=OFF' '-DBUILD_qtwebengine=OFF' '-DBUILD_qtwebglplugin=OFF' '-DBUILD_qtwebsockets=OFF' '-DBUILD_qtwebview=OFF' '-DBUILD_qtwinextras=OFF' '-DQT_INTERNAL_CALLED_FROM_CONFIGURE:BOOL=TRUE' '-DBUILD_WITH_PCH=OFF' '-DCMAKE_INSTALL_PREFIX=/opt/repositories/KEEP_qt6_dbg_install' '-DQT_BUILD_EXAMPLES=FALSE' '-DCMAKE_BUILD_TYPE=Debug' '-DFEATURE_cxx20=OFF' '-DFEATURE_cxx2b=OFF' '-DFEATURE_ssl=ON' '-DINPUT_sysroot=/' '-DFEATURE_pkg_config=ON' '-DINPUT_libpng=qt' '-DFEATURE_system_zlib=OFF' '-G' 'Ninja' '/opt/repositories/MINE_qt6'
+'/opt/repositories/run_from_source/cmake-3.27.7-linux-x86_64/bin/cmake' '-DBUILD_qt3d=OFF' '-DBUILD_qtactiveqt=OFF' '-DBUILD_qtandroidextras=OFF' '-DBUILD_qtcanvas3d=OFF' '-DBUILD_qtdatavis3d=OFF' '-DBUILD_qtdoc=OFF' '-DBUILD_qtdocgallery=OFF' '-DBUILD_qtfeedback=OFF' '-DBUILD_qtgamepad=OFF' '-DBUILD_qtlottie=OFF' '-DBUILD_qtmacextras=OFF' '-DBUILD_qtnetworkauth=OFF' '-DBUILD_qtpim=OFF' '-DBUILD_qtpurchasing=OFF' '-DBUILD_qtqa=OFF' '-DBUILD_qtquick3d=OFF' '-DBUILD_qtremoteobjects=OFF' '-DBUILD_qtrepotools=OFF' '-DBUILD_qtscxml=OFF' '-DBUILD_qtsensors=OFF' '-DBUILD_qtserialbus=OFF' '-DBUILD_qtsystems=OFF' '-DBUILD_qtwayland=OFF' '-DBUILD_qtwebchannel=OFF' '-DBUILD_qtwebengine=OFF' '-DBUILD_qtwebglplugin=OFF' '-DBUILD_qtwebsockets=OFF' '-DBUILD_qtwebview=OFF' '-DBUILD_qtwinextras=OFF' '-DQT_INTERNAL_CALLED_FROM_CONFIGURE:BOOL=TRUE' '-DBUILD_WITH_PCH=OFF' '-DCMAKE_INSTALL_PREFIX=/opt/repositories/KEEP_qt6_dbg_install' '-DQT_BUILD_EXAMPLES=FALSE' '-DCMAKE_BUILD_TYPE=Debug' '-DFEATURE_cxx20=OFF' '-DFEATURE_cxx2b=OFF' '-DFEATURE_ssl=ON' '-DINPUT_sysroot=/' '-DFEATURE_pkg_config=ON' '-DINPUT_libpng=qt' '-DFEATURE_system_zlib=OFF' '-DFEATURE_xcb=ON' '-DFEATURE_xkbcommon=ON' '-G' 'Ninja' '/opt/repositories/MINE_qt6'
 -- Checking dependencies of submodule 'qtbase'
 -- Checking dependencies of submodule 'qtimageformats'
 -- Checking dependencies of submodule 'qtlanguageserver'
@@ -28,6 +28,22 @@ Call Stack (most recent call first):
 -- Checking dependencies of submodule 'qtconnectivity'
 -- Configuring submodule 'qtbase'
 -- [QtBase] CMAKE_BUILD_TYPE was already explicitly set to: 'Debug'
+[QtBase]     'xcb' was changed from OFF to ON
+[QtBase]     'xkbcommon' was changed from OFF to ON
+CMake Warning at qtbase/cmake/QtFeature.cmake:896 (message):
+  Due to detected feature set changes, dependent features will be re-computed
+  automatically.  This might cause a lot of files to be rebuilt.  To disable
+  this behavior, configure with -DQT_NO_FEATURE_AUTO_RESET=ON
+Call Stack (most recent call first):
+  qtbase/cmake/QtBuildHelpers.cmake:467 (qt_internal_detect_dirty_features)
+  qtbase/cmake/QtBuild.cmake:4 (qt_internal_setup_build_and_global_variables)
+  qtbase/cmake/QtSetup.cmake:6 (include)
+  qtbase/cmake/QtBuildRepoHelpers.cmake:21 (include)
+  qtbase/cmake/QtBuildRepoHelpers.cmake:179 (qt_build_internals_set_up_private_api)
+  qtbase/cmake/QtBaseHelpers.cmake:154 (qt_build_repo_begin)
+  qtbase/CMakeLists.txt:32 (qt_internal_qtbase_build_repo)
+
+
             -DCMAKE_C_FLAGS_DEBUG=-g -Og
             -DCMAKE_C_FLAGS_RELEASE=-DNDEBUG -O2
             -DCMAKE_C_FLAGS_RELWITHDEBINFO=-g -DNDEBUG -O2
@@ -40,6 +56,27 @@ Call Stack (most recent call first):
             -DCMAKE_CXX_STANDARD=17
             -DCMAKE_CXX_STANDARD_REQUIRED=ON
             -DCMAKE_MODULE_PATH:STRING=/opt/repositories/MINE_qt6/qtbase/cmake/platforms
+CMake Warning at qtbase/cmake/QtFeature.cmake:285 (message):
+  Resetting 'FEATURE_xcb' from 'ON' to 'OFF' because it doesn't meet its
+  condition after reconfiguration.  Condition expression is:
+  'QT_FEATURE_thread;AND;TARGET;XCB::XCB;AND;TEST_xcb_syslibs;AND;QT_FEATURE_xkbcommon_x11'
+Call Stack (most recent call first):
+  qtbase/cmake/QtFeature.cmake:434 (qt_feature_check_and_save_user_provided_value)
+  qtbase/cmake/QtFeature.cmake:711 (qt_evaluate_feature)
+  qtbase/cmake/QtFeature.cmake:680 (qt_feature_module_end)
+  qtbase/src/CMakeLists.txt:13 (qt_feature_evaluate_features)
+
+
+CMake Warning at qtbase/cmake/QtFeature.cmake:269 (message):
+  Auto-resetting 'FEATURE_xkbcommon_x11' from 'OFF' to 'ON', because the
+  dependent feature 'xkbcommon' was marked dirty.
+Call Stack (most recent call first):
+  qtbase/cmake/QtFeature.cmake:434 (qt_feature_check_and_save_user_provided_value)
+  qtbase/cmake/QtFeature.cmake:711 (qt_evaluate_feature)
+  qtbase/cmake/QtFeature.cmake:680 (qt_feature_module_end)
+  qtbase/src/CMakeLists.txt:13 (qt_feature_evaluate_features)
+
+
 -- Configuring submodule 'qtimageformats'
 -- Configuring submodule 'qtlanguageserver'
 -- Configuring submodule 'qtshadertools'
@@ -56,9 +93,10 @@ Call Stack (most recent call first):
 
 
 -- Configuring submodule 'qtconnectivity'
+-- Found XKB: /usr/lib/x86_64-linux-gnu/libxkbcommon.so (found suitable version "1.4.0", minimum required is "0.5.0") 
 
 -- Configuration summary has been written to /opt/repositories/KEEP_build_qt_binaries/qt6_dbg_configuration/config.summary
 
--- Configuring done (7.2s)
+-- Configuring done (7.4s)
 -- Generating done (0.8s)
 -- Build files have been written to: /opt/repositories/KEEP_build_qt_binaries/qt6_dbg_configuration

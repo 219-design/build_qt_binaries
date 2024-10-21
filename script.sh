@@ -82,6 +82,8 @@ else
       -pkg-config \
       -qt-libpng \
       -qt-zlib \
+      -xcb \
+      -xkbcommon \
       -skip qt3d \
       -skip qtactiveqt \
       -skip qtandroidextras \
