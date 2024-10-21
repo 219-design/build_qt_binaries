@@ -1,0 +1,64 @@
++ /opt/repositories/MINE_qt6/qtbase/configure -top-level -prefix /opt/repositories/KEEP_qt6_dbg_install -opensource -confirm-license -c++std c++17 -debug -ssl -sysroot / -no-pch -pkg-config -qt-libpng -qt-zlib -skip qt3d -skip qtactiveqt -skip qtandroidextras -skip qtcanvas3d -skip qtdatavis3d -skip qtdoc -skip qtdocgallery -skip qtfeedback -skip qtgamepad -skip qtlottie -skip qtmacextras -skip qtnetworkauth -skip qtpim -skip qtpurchasing -skip qtqa -skip qtquick3d -skip qtremoteobjects -skip qtrepotools -skip qtscxml -skip qtsensors -skip qtserialbus -skip qtsystems -skip qtwayland -skip qtwebchannel -skip qtwebengine -skip qtwebglplugin -skip qtwebsockets -skip qtwebview -skip qtwinextras -nomake tools -nomake examples
+Overriding option 'libpng' with 'qt' (was: 'undefined')
+CMake Warning at /opt/repositories/MINE_qt6/qtbase/cmake/QtProcessConfigureArgs.cmake:369 (message):
+  '-nomake tools' is not implemented yet.
+Call Stack (most recent call first):
+  /opt/repositories/MINE_qt6/qtbase/cmake/QtProcessConfigureArgs.cmake:917 (qtConfAddWarning)
+  /opt/repositories/MINE_qt6/qtbase/cmake/QtProcessConfigureArgs.cmake:978 (check_qt_build_parts)
+
+
+CMake Warning at /opt/repositories/MINE_qt6/qtbase/cmake/QtProcessConfigureArgs.cmake:369 (message):
+  The -sysroot option is deprecated and no longer has any effect.  It is
+  recommended to use a toolchain file instead, i.e.,
+  -DCMAKE_TOOLCHAIN_FILE=<filename>.  Alternatively, you may use
+  -DCMAKE_SYSROOT option to pass the sysroot to CMake.
+
+Call Stack (most recent call first):
+  /opt/repositories/MINE_qt6/qtbase/cmake/QtProcessConfigureArgs.cmake:1117 (qtConfAddWarning)
+
+
+'/opt/repositories/run_from_source/cmake-3.27.7-linux-x86_64/bin/cmake' '-DBUILD_qt3d=OFF' '-DBUILD_qtactiveqt=OFF' '-DBUILD_qtandroidextras=OFF' '-DBUILD_qtcanvas3d=OFF' '-DBUILD_qtdatavis3d=OFF' '-DBUILD_qtdoc=OFF' '-DBUILD_qtdocgallery=OFF' '-DBUILD_qtfeedback=OFF' '-DBUILD_qtgamepad=OFF' '-DBUILD_qtlottie=OFF' '-DBUILD_qtmacextras=OFF' '-DBUILD_qtnetworkauth=OFF' '-DBUILD_qtpim=OFF' '-DBUILD_qtpurchasing=OFF' '-DBUILD_qtqa=OFF' '-DBUILD_qtquick3d=OFF' '-DBUILD_qtremoteobjects=OFF' '-DBUILD_qtrepotools=OFF' '-DBUILD_qtscxml=OFF' '-DBUILD_qtsensors=OFF' '-DBUILD_qtserialbus=OFF' '-DBUILD_qtsystems=OFF' '-DBUILD_qtwayland=OFF' '-DBUILD_qtwebchannel=OFF' '-DBUILD_qtwebengine=OFF' '-DBUILD_qtwebglplugin=OFF' '-DBUILD_qtwebsockets=OFF' '-DBUILD_qtwebview=OFF' '-DBUILD_qtwinextras=OFF' '-DQT_INTERNAL_CALLED_FROM_CONFIGURE:BOOL=TRUE' '-DBUILD_WITH_PCH=OFF' '-DCMAKE_INSTALL_PREFIX=/opt/repositories/KEEP_qt6_dbg_install' '-DQT_BUILD_EXAMPLES=FALSE' '-DCMAKE_BUILD_TYPE=Debug' '-DFEATURE_cxx20=OFF' '-DFEATURE_cxx2b=OFF' '-DFEATURE_ssl=ON' '-DINPUT_sysroot=/' '-DFEATURE_pkg_config=ON' '-DINPUT_libpng=qt' '-DFEATURE_system_zlib=OFF' '-G' 'Ninja' '/opt/repositories/MINE_qt6'
+-- Checking dependencies of submodule 'qtbase'
+-- Checking dependencies of submodule 'qtimageformats'
+-- Checking dependencies of submodule 'qtlanguageserver'
+-- Checking dependencies of submodule 'qtshadertools'
+-- Checking dependencies of submodule 'qtsvg'
+-- Checking dependencies of submodule 'qtdeclarative'
+-- Skipping optional dependency 'qtlanguageserver' of 'qtdeclarative', because qtlanguageserver's CMakeLists.txt couldn't be found.
+-- Checking dependencies of submodule 'qtconnectivity'
+-- Configuring submodule 'qtbase'
+-- [QtBase] CMAKE_BUILD_TYPE was already explicitly set to: 'Debug'
+            -DCMAKE_C_FLAGS_DEBUG=-g -Og
+            -DCMAKE_C_FLAGS_RELEASE=-DNDEBUG -O2
+            -DCMAKE_C_FLAGS_RELWITHDEBINFO=-g -DNDEBUG -O2
+            -DCMAKE_CXX_FLAGS_DEBUG=-g -Og
+            -DCMAKE_CXX_FLAGS_RELEASE=-DNDEBUG -O2
+            -DCMAKE_CXX_FLAGS_RELWITHDEBINFO=-g -DNDEBUG -O2
+            -DCMAKE_OBJCOPY=/usr/bin/objcopy
+            -DCMAKE_C_STANDARD=11
+            -DCMAKE_C_STANDARD_REQUIRED=ON
+            -DCMAKE_CXX_STANDARD=17
+            -DCMAKE_CXX_STANDARD_REQUIRED=ON
+            -DCMAKE_MODULE_PATH:STRING=/opt/repositories/MINE_qt6/qtbase/cmake/platforms
+-- Configuring submodule 'qtimageformats'
+-- Configuring submodule 'qtlanguageserver'
+-- Configuring submodule 'qtshadertools'
+-- Configuring submodule 'qtsvg'
+-- Configuring submodule 'qtdeclarative'
+CMake Deprecation Warning at /opt/repositories/KEEP_build_qt_binaries/qt6_dbg_configuration/qtbase/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:3368 (message):
+  Qt policy QTP0004 is set to OLD.  Support for the old behavior will be
+  removed in a future major version of Qt.
+Call Stack (most recent call first):
+  qtdeclarative/src/qml/Qt6QmlMacros.cmake:3238 (__qt_internal_setup_policy)
+  qtdeclarative/src/qml/Qt6QmlMacros.cmake:891 (qt6_target_qml_sources)
+  qtdeclarative/src/qml/Qt6QmlBuildInternals.cmake:304 (qt6_add_qml_module)
+  qtdeclarative/src/quickdialogs/quickdialogsquickimpl/CMakeLists.txt:61 (qt_internal_add_qml_module)
+
+
+-- Configuring submodule 'qtconnectivity'
+
+-- Configuration summary has been written to /opt/repositories/KEEP_build_qt_binaries/qt6_dbg_configuration/config.summary
+
+-- Configuring done (7.2s)
+-- Generating done (0.8s)
+-- Build files have been written to: /opt/repositories/KEEP_build_qt_binaries/qt6_dbg_configuration
