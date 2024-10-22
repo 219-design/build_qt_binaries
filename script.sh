@@ -19,6 +19,32 @@ sudo sed -i -- 's/#deb-src/deb-src/g' /etc/apt/sources.list
 sudo sed -i -- 's/# deb-src/deb-src/g' /etc/apt/sources.list
 sudo apt-get update
 
+sudo apt install \
+    libfontconfig1-dev \
+    libfreetype-dev \
+    libx11-dev \
+    libx11-xcb-dev \
+    libxcb-cursor-dev \
+    libxcb-glx0-dev \
+    libxcb-icccm4-dev \
+    libxcb-image0-dev \
+    libxcb-keysyms1-dev \
+    libxcb-randr0-dev \
+    libxcb-render-util0-dev \
+    libxcb-shape0-dev \
+    libxcb-shm0-dev \
+    libxcb-sync-dev \
+    libxcb-util-dev \
+    libxcb-xfixes0-dev \
+    libxcb-xinerama0-dev \
+    libxcb-xkb-dev \
+    libxcb1-dev \
+    libxext-dev \
+    libxfixes-dev \
+    libxi-dev \
+    libxkbcommon-dev \
+    libxkbcommon-x11-dev \
+    libxrender-dev
 #sudo apt-get build-dep qt5-default
 
 cd $ROOT_SCRIPT_DIR  # enter this script's directory. (in case called from root of repository)
@@ -84,6 +110,7 @@ else
       -qt-zlib \
       -xcb \
       -xkbcommon \
+      -qpa xcb \
       -skip qt3d \
       -skip qtactiveqt \
       -skip qtandroidextras \
@@ -123,7 +150,7 @@ fi
 
 #       -no-compile-examples \
 
-exit 1
+#exit 1
 
 #make -j6
 cmake --build . -j 10

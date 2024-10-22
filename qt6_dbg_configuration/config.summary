@@ -139,10 +139,10 @@ Features used by QPA backends:
   xkbcommon .............................. yes
   X11 specific:
     XLib ................................. yes
-    XCB Xlib ............................. no
+    XCB Xlib ............................. yes
     EGL on X11 ........................... yes
     xkbcommon-x11 ........................ yes
-    xcb-sm ............................... no
+    xcb-sm ............................... yes
 QPA backends:
   DirectFB ............................... no
   EGLFS .................................. yes
@@ -156,7 +156,7 @@ QPA backends:
     EGLFS VSP2 ........................... no
     EGLFS Mali ........................... no
     EGLFS Raspberry Pi ................... no
-    EGLFS X11 ............................ no
+    EGLFS X11 ............................ yes
   LinuxFB ................................ yes
   VNC .................................... yes
   VK_KHR_display ......................... yes
@@ -166,9 +166,9 @@ QPA backends:
   XCB:
     Using system-provided xcb-xinput ..... no
     GL integrations:
-      GLX Plugin ......................... no
-        XCB GLX .......................... no
-      EGL-X11 Plugin ..................... no
+      GLX Plugin ......................... yes
+        XCB GLX .......................... yes
+      EGL-X11 Plugin ..................... yes
   Windows:
     Direct 2D ............................ no
     Direct 2D 1.1 ........................ no
@@ -230,8 +230,39 @@ Qt Quick Templates 2:
   Calendar support ....................... yes
 Qt Quick Controls 2:
   Styles ................................. Basic Fusion FluentWinUI3 Imagine Material Universal
+Qt 5 Compatibility Libraries:
+  iconv .................................. no
 Qt Bluetooth:
   BlueZ .................................. no
   BlueZ Low Energy ....................... no
   Linux Crypto API ....................... no
   WinRT Bluetooth API .................... no
+Qt Multimedia:
+  Spatial Audio .......................... yes
+  Spatial Audio (Quick3D) ................ no
+  Low level Audio Backend:
+    ALSA (experimental) .................. no
+    PulseAudio ........................... no
+    MMRenderer ........................... no
+    CoreAudio ............................ no
+    Windows Media SDK .................... no
+    Open SLES (Android) .................. no
+    Web Assembly ......................... no
+  Plugin:
+    QtMM GStreamer plugin ................ no
+    FFmpeg ............................... no
+    FFmpeg plugin features:
+      PipeWire ........................... no
+    MMRenderer ........................... no
+    AVFoundation ......................... no
+    Windows Media Foundation ............. no
+  Hardware acceleration and features:
+    Video for Linux ...................... yes
+    VAAPI support ........................ no
+    Linux DMA buffer support ............. yes
+    VideoToolbox ......................... no
+Serial Port:
+  ntddmodm ............................... no
+Note: Disabling X11 Accessibility Bridge: D-Bus or AT-SPI is missing.
+WARNING: No backend for low level audio found.
+WARNING: No media backend found
