@@ -75,8 +75,10 @@ cd ../"${qt_srcsdir}"
 #     qtx11extras
 
 
+myinstall="KEEP_aa_qt6_${BUILDTYPE}_install"
+
 cd $ROOT_SCRIPT_DIR  # enter this script's directory. (getting our bearings again)
-mkdir -p ../KEEP_aa_qt6_${BUILDTYPE}_install
+mkdir -p ../"${myinstall}"
 mkdir -p qt6_${BUILDTYPE}_configuration
 cd qt6_${BUILDTYPE}_configuration
 
@@ -98,7 +100,7 @@ else
 
   # the '-no-pch' is a workaround for a known qt build issue
   ../../"${qt_srcsdir}"/configure \
-      -prefix /opt/repositories/KEEP_qt6_${BUILDTYPE}_install \
+      -prefix /opt/repositories/${myinstall} \
       -opensource -confirm-license \
       -c++std c++17 \
       ${CONFIG_ARGS} \
