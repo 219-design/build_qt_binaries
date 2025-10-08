@@ -49,7 +49,7 @@ sudo apt install \
 
 cd $ROOT_SCRIPT_DIR  # enter this script's directory. (in case called from root of repository)
 
-# 2024-10-21 my qt6 repo was checked out to tag: v6.8.0
+# 2025-10-08 my qt6 repo was checked out to tag: v6.5.3
 qt_srcsdir="MINE_qt6"
 
 cd ../"${qt_srcsdir}"
@@ -76,7 +76,7 @@ cd ../"${qt_srcsdir}"
 
 
 cd $ROOT_SCRIPT_DIR  # enter this script's directory. (getting our bearings again)
-mkdir -p ../KEEP_qt6_${BUILDTYPE}_install
+mkdir -p ../KEEP_aa_qt6_${BUILDTYPE}_install
 mkdir -p qt6_${BUILDTYPE}_configuration
 cd qt6_${BUILDTYPE}_configuration
 
@@ -87,7 +87,7 @@ else
   CONFIG_ARGS=""
 fi
 
-if [ -f config.status ]; then
+if [ -f config.summary ]; then
     # in a properly-working scenario, we would here
     # try to INVOKE config.status as: ./config.status -recheck-all
     # However this is broken in qt at the moment:
@@ -102,6 +102,7 @@ else
       -opensource -confirm-license \
       -c++std c++17 \
       ${CONFIG_ARGS} \
+      -submodules qtbase,qtconnectivity,qt5compat,qtdeclarative,qtshadertools,qtsvg,qtmultimedia \
       -ssl \
       -sysroot / \
       -no-pch \
@@ -150,7 +151,7 @@ fi
 
 #       -no-compile-examples \
 
-#exit 1
+#exit 17
 
 #make -j6
 cmake --build . -j 10
