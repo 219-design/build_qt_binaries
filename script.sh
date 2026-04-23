@@ -15,9 +15,9 @@ ROOT_SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd
 #   sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 60
 #   sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60
 
-sudo sed -i -- 's/#deb-src/deb-src/g' /etc/apt/sources.list
-sudo sed -i -- 's/# deb-src/deb-src/g' /etc/apt/sources.list
-sudo apt-get update
+#sudo sed -i -- 's/#deb-src/deb-src/g' /etc/apt/sources.list
+#sudo sed -i -- 's/# deb-src/deb-src/g' /etc/apt/sources.list
+#sudo apt-get update # DNC DNC DNC DNC
 
 sudo apt install \
     libfontconfig1-dev \
@@ -49,7 +49,7 @@ sudo apt install \
 
 cd $ROOT_SCRIPT_DIR  # enter this script's directory. (in case called from root of repository)
 
-# 2025-10-08 my qt6 repo was checked out to tag: v6.5.3
+# 2026-04-23 my qt6 repo was checked out to tag: v6.11.0
 qt_srcsdir="MINE_qt6"
 
 cd ../"${qt_srcsdir}"
@@ -75,7 +75,7 @@ cd ../"${qt_srcsdir}"
 #     qtx11extras
 
 
-myinstall="KEEP_aa_qt6_${BUILDTYPE}_install"
+myinstall="KEEP_6_11_qmlformat_qt6_${BUILDTYPE}_install"
 
 cd $ROOT_SCRIPT_DIR  # enter this script's directory. (getting our bearings again)
 mkdir -p ../"${myinstall}"
@@ -104,7 +104,7 @@ else
       -opensource -confirm-license \
       -c++std c++17 \
       ${CONFIG_ARGS} \
-      -submodules qtbase,qtconnectivity,qt5compat,qtdeclarative,qtshadertools,qtsvg,qtmultimedia \
+      -submodules qtbase,qtconnectivity,qt5compat,qtdeclarative,qtmultimedia,qttools \
       -ssl \
       -sysroot / \
       -no-pch \
@@ -143,7 +143,6 @@ else
       -skip qtwebsockets \
       -skip qtwebview \
       -skip qtwinextras \
-      -nomake tools \
       -nomake examples \
       |& tee configure_${BUILDTYPE}_output.txt
 
@@ -153,7 +152,7 @@ fi
 
 #       -no-compile-examples \
 
-#exit 17
+exit 17
 
 #make -j6
 cmake --build . -j 10

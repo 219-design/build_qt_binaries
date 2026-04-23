@@ -1,21 +1,25 @@
 
-Building for: linux-g++ (x86_64, CPU features: mmx sse sse2)
+Building for: linux-g++ (x86_64, CPU features: )
 Compiler: gcc 11.4.0
 Build options:
   Mode ................................... debug
   Optimize debug build ................... yes
   Fully optimize release builds (-O3) .... no
-  Building shared libraries .............. yes
-  Using C standard ....................... C11
-  Using C++ standard ..................... C++17
+  Building shared libraries (alias of  BUILD_SHARED_LIBS)  yes
   Using ccache ........................... no
   Unity Build ............................ no
   Using new DTAGS ........................ yes
   Generating GDB index ................... no
   Relocatable ............................ yes
-  Using precompiled headers .............. no
   Using Link Time Optimization (LTCG) .... no
-  Using Intel CET ........................ yes
+  Using Intel Control-flow Enforcement Technology (CET)  yes
+  Using Glibc function fortification ..... yes
+  Using -ftrivial-auto-var-init=pattern .. no
+  Using -fstack-protector-strong ......... yes
+  Using -fstack-clash-protection ......... yes
+  Using libstdc++ assertions ............. yes
+  Using libc++ hardening ................. no
+  Using -z relro -z now when linking ..... yes
   Target compiler supports:
     x86 Intrinsics ....................... Basic VAES AVX512VBMI2
   Sanitizers:
@@ -25,6 +29,7 @@ Build options:
     Fuzzer (instrumentation only) ........ no
     Undefined ............................ no
   Build parts ............................ libs tools
+  Install examples sources ............... no
 Qt modules and options:
   Qt Concurrent .......................... yes
   Qt D-Bus ............................... yes
@@ -38,7 +43,9 @@ Qt modules and options:
   Qt Xml ................................. yes
 Support enabled for:
   Using pkg-config ....................... yes
+  Using vcpkg ............................ no
   udev ................................... yes
+  liburing ............................... no
   OpenSSL ................................ yes
     Qt directly linked to OpenSSL ........ no
   OpenSSL 1.1 ............................ no
@@ -46,31 +53,39 @@ Support enabled for:
   Using system zlib ...................... no
   Zstandard support ...................... yes
   Thread support ......................... yes
+  Using 16KB page sizes in Android ....... no
 Common build options:
   Linker can resolve circular dependencies  yes
 Qt Core:
   backtrace .............................. yes
+  C++23 <stacktrace> ..................... no
   DoubleConversion ....................... yes
     Using system DoubleConversion ........ no
+  CLONE_PIDFD support in forkfd .......... yes
   GLib ................................... yes
   ICU .................................... yes
+  JeMalloc ............................... no
+  liburing ............................... no
+  Windows I/O Ring ....................... no
+  Windows I/O Ring IORING_CREATE_SKIP_BUILDER_PARAM_CHECKS  no
+  std::chrono::tzdb QTZ backend .......... no
   Using system libb2 ..................... no
   Built-in copy of the MIME database ..... yes
-  cpp/winrt base ......................... no
+  Application permissions ................ yes
+  Defaulting legacy IPC to POSIX ......... no
   Tracing backend ........................ <none>
+  OpenSSL based cryptographic hash ....... no
   Logging backends:
     journald ............................. no
     syslog ............................... no
     slog2 ................................ no
   PCRE2 .................................. yes
     Using system PCRE2 ................... yes
-  CLONE_PIDFD support in forkfd .......... yes
-  Application permissions ................ no
 Qt Sql:
   SQL item models ........................ yes
 Qt Network:
-  getifaddrs() ........................... yes
-  IPv6 ifname ............................ yes
+  getifaddrs() ........................... no
+  IPv6 ifname ............................ no
   libproxy ............................... no
   Linux AF_NETLINK ....................... yes
   DTLS ................................... yes
@@ -87,8 +102,11 @@ Core tools:
   macOS deployment tool .................. no
   Windows deployment tool ................ no
   qmake .................................. yes
+Wayland tools:
+  qtwaylandscanner ....................... yes
 Qt Gui:
   Accessibility .......................... yes
+  Emoji Segmenter ........................ yes
   FreeType ............................... yes
     Using system FreeType ................ yes
   HarfBuzz ............................... yes
@@ -117,7 +135,10 @@ Qt Gui:
     OpenGL ES 3.1 ........................ no
     OpenGL ES 3.2 ........................ no
   Vulkan ................................. yes
+  Metal .................................. no
+  QGraphicsFrameCapture .................. no
   Session Management ..................... yes
+  Multi-threaded image and painting helpers  yes
 Features used by QPA backends:
   evdev .................................. yes
   libinput ............................... no
@@ -126,6 +147,7 @@ Features used by QPA backends:
   mtdev .................................. no
   tslib .................................. no
   xkbcommon .............................. yes
+  vxworksevdev ........................... no
   X11 specific:
     XLib ................................. yes
     XCB Xlib ............................. yes
@@ -163,6 +185,20 @@ QPA backends:
     Direct 2D 1.1 ........................ no
     DirectWrite .......................... no
     DirectWrite 3 ........................ no
+    DirectWrite COLRv1 Support ........... no
+  Wayland:
+    Client ............................... yes
+    Hardware Integrations:
+      EGL ................................ yes
+      Raspberry Pi ....................... no
+      DRM EGL ............................ yes
+      libhybris EGL ...................... no
+      Linux dma-buf server buffer ........ yes
+      Shm emulation server buffer ........ yes
+      Vulkan-based server buffer ......... yes
+    Shell Integrations:
+      xdg-shell .......................... yes
+      wl-shell (deprecated) .............. yes
 Qt Widgets:
   GTK+ ................................... yes
   Styles ................................. Fusion Windows
@@ -180,6 +216,7 @@ Qt Sql Drivers:
   PostgreSQL ............................. yes
   SQLite ................................. yes
     Using system provided SQLite ......... no
+  Mimer .................................. no
 Further Image Formats:
   JasPer ................................. no
   MNG .................................... no
@@ -190,16 +227,20 @@ Further Image Formats:
 Qt QML:
   QML network support .................... yes
   QML debugging and profiling support .... yes
+  Qt Labs ................................ yes
   QML just-in-time compiler .............. yes
   QML XML http request ................... yes
   QML Locale ............................. yes
+  QML SSL support ........................ yes
 Qt QML Models:
   QML list model ......................... yes
   QML delegate model ..................... yes
+  QML sortfilterproxy model .............. yes
 Qt Quick:
   AnimatedImage item ..................... yes
   Canvas item ............................ yes
   Support for Qt Quick Designer .......... yes
+  Support for Qt Quick Dialogs ........... yes
   Flipable item .......................... yes
   GridView item .......................... yes
   ListView item .......................... yes
@@ -211,17 +252,27 @@ Qt Quick:
   Repeater item .......................... yes
   ShaderEffect item ...................... yes
   Sprite item ............................ yes
+  VectorImage item ....................... yes
+Qt Quick Shapes:
+  Design Helpers ......................... yes
 Qt Quick Templates 2:
   Hover support .......................... yes
   Multi-touch support .................... yes
   Calendar support ....................... yes
 Qt Quick Controls 2:
-  Styles ................................. Basic Fusion Imagine iOS Material Universal macOS Windows
-Qt Bluetooth:
+  Styles ................................. Basic Fusion FluentWinUI3 Imagine Material Universal
+  StyleKit ............................... yes
+Qt Connectivity:
+  Qt Bluetooth ........................... yes
+  Qt NFC ................................. yes
+Qt Bluetooth details:
   BlueZ .................................. yes
   BlueZ Low Energy ....................... yes
   Linux Crypto API ....................... yes
   WinRT Bluetooth API .................... no
+Qt Nfc details:
+  Use the PCSCLite library to access NFC devices  no
+  Use neard to access NFC devices ........ yes
 Qt 5 Compatibility Libraries:
   iconv .................................. no
 Qt Multimedia:
@@ -230,19 +281,46 @@ Qt Multimedia:
   Low level Audio Backend:
     ALSA (experimental) .................. no
     PulseAudio ........................... yes
+    PipeWire ............................. no
     MMRenderer ........................... no
     CoreAudio ............................ no
-    Windows Media SDK .................... no
-    Open SLES (Android) .................. no
+    AAudio (Android) ..................... no
     Web Assembly ......................... no
+    WASAPI (Windows Audio Session API) ... no
   Plugin:
-    GStreamer 1.0 ........................ yes
-    FFmpeg ............................... no
+    QtMM GStreamer plugin ................ no
+    FFmpeg ............................... yes
+    FFmpeg plugin features:
+      PipeWire screen capture ............ no
     MMRenderer ........................... no
     AVFoundation ......................... no
-    Windows Media Foundation ............. no
+    Native Android backend (deprecated) .. no
+    Native Windows backend (deprecated) .. no
   Hardware acceleration and features:
     Video for Linux ...................... yes
-    VAAPI support ........................ no
+    VAAPI support ........................ yes
     Linux DMA buffer support ............. yes
     VideoToolbox ......................... no
+Qt Tools:
+  Qt Assistant ........................... yes
+  libclang found ......................... yes
+  Qt Widgets Designer .................... yes
+  Qt Distance Field Generator ............ yes
+  kmap2qmap .............................. yes
+  Qt Linguist ............................ yes
+  pixeltool .............................. yes
+  qdbus .................................. yes
+  QDoc ................................... yes
+  QDoc Test Coverage ..................... no
+  Qt Attributions Scanner ................ yes
+  qtdiag ................................. yes
+  qtplugininfo ........................... yes
+SBOM:
+  Generate SBOM .......................... yes
+  Generate SPDX v2.3 ..................... yes
+  Generate SPDX v2.3 JSON ................ yes (skipped if dependencies are missing)
+  Verify   SPDX v2.3 JSON ................ yes (skipped if dependencies are missing)
+  Generate CyloneDX v1.6 ................. no (skipped if dependencies are missing)
+  Verify   CyloneDX v1.6 ................. yes (skipped if dependencies are missing)
+  SBOM Python interpreter ................ Not found
+  Generate source SPDX SBOM .............. no
